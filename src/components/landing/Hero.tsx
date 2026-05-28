@@ -30,7 +30,8 @@ export function Hero() {
             className="pulse-dot inline-block w-1.5 h-1.5 rounded-full"
             style={{ background: "#10B981" }}
           />
-          ✦ Avicena IA — Seu assistente clínico com IA
+          ✦ Avicena IA · Chat Clínico
+
         </div>
 
         <h1 className="h1 text-white fade-up max-w-[900px] mx-auto" style={{ animationDelay: ".05s" }}>
@@ -69,8 +70,9 @@ export function Hero() {
           </span>
           <span className="w-px h-3.5 bg-white/15" />
           <span className="inline-flex items-center gap-2">
-            <Clock size={15} /> 30 dias grátis
+            <Clock size={15} /> 7 dias grátis
           </span>
+
         </div>
       </div>
     </section>

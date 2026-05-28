@@ -3,12 +3,13 @@ import { Plus } from "lucide-react";
 
 const faqs = [
   {
+  {
     q: "A MindMed substitui meu prontuário eletrônico?",
-    a: "Não. A MindMed é uma camada de inteligência clínica que funciona junto ao seu prontuário atual. Ela documenta, apoia o raciocínio clínico e oferece telemedicina — e exporta tudo para o sistema que você já usa, como iClinic, Tasy ou MV.",
+    a: "Não. A MindMed é uma camada de inteligência clínica que funciona junto ao seu prontuário atual. Ela documenta, apoia o raciocínio clínico e oferece telemedicina — exportando tudo para o sistema que você já usa, via PDF, e-mail, API ou copiar e colar.",
   },
   {
     q: "O que é o Avicena e como ele é diferente de outros chatbots médicos?",
-    a: "Avicena é o assistente de IA clínica da MindMed, nomeado em homenagem a Ibn Sina (980–1037), o maior médico da história. Diferente de chatbots genéricos, o Avicena entende o contexto do atendimento atual, tem acesso ao histórico do paciente e cita as fontes clínicas (UpToDate, PubMed) para cada resposta.",
+    a: "Avicena é um chat clínico em tempo real onde o médico tira dúvidas durante o atendimento — interações medicamentosas, diagnósticos diferenciais e protocolos. Diferente de chatbots genéricos, entende o contexto do caso e cita as fontes clínicas (UpToDate, PubMed) em cada resposta.",
   },
   {
     q: "A plataforma está em conformidade com o CFM para telemedicina?",
@@ -24,8 +25,9 @@ const faqs = [
   },
   {
     q: "Como funciona o período de teste gratuito?",
-    a: "Você tem 30 dias de acesso completo ao plano Profissional sem necessidade de cartão de crédito. Ao final, escolha seu plano ou cancele sem cobranças automáticas.",
+    a: "Você tem 7 dias de acesso completo ao plano Profissional sem necessidade de cartão de crédito. Ao final, escolha seu plano ou cancele sem cobranças automáticas.",
   },
+
 ];
 
 export function FAQ() {
