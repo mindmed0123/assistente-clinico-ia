@@ -3,8 +3,7 @@ import { Check } from "lucide-react";
 const plans = [
   {
     label: "BÁSICO",
-  {
-    label: "BÁSICO",
+
     price: "R$ 149",
     period: "por mês · 7 dias grátis para começar",
     features: [
@@ -51,7 +50,6 @@ const plans = [
   },
 ];
 
-];
 
 export function Pricing() {
   return (
