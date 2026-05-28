@@ -1,12 +1,25 @@
-const systems = [
-  { name: "iClinic", desc: "Integração nativa", color: "#10B981" },
-  { name: "Tasy", desc: "Philips Healthcare", color: "#2C70DD" },
-  { name: "MV", desc: "MV Sistemas", color: "#7C3AED" },
-  { name: "Pixeon", desc: "Gestão hospitalar", color: "#F59E0B" },
-  { name: "RNP", desc: "Rede Nacional", color: "#DC2626" },
+import { FileText, Code2, Mail, ClipboardCopy, Zap, Lock } from "lucide-react";
+
+const exportOptions = [
+  { name: "PDF", desc: "Exportação de laudos", icon: FileText, color: "#DC2626" },
+  { name: "API", desc: "Integração programática", icon: Code2, color: "#2C70DD" },
+  { name: "E-mail", desc: "Envio direto", icon: Mail, color: "#7C3AED" },
+  { name: "Copiar/Colar", desc: "Compatível com qualquer sistema", icon: ClipboardCopy, color: "#10B981" },
+  { name: "Tempo real", desc: "Documentação ao vivo", icon: Zap, color: "#F59E0B" },
+  { name: "Segurança", desc: "Criptografia ponta a ponta", icon: Lock, color: "#0A1628" },
 ];
 
-function SystemCard({ name, desc, color }: { name: string; desc: string; color: string }) {
+function ExportCard({
+  name,
+  desc,
+  icon: Icon,
+  color,
+}: {
+  name: string;
+  desc: string;
+  icon: typeof FileText;
+  color: string;
+}) {
   return (
     <div
       className="rounded-[14px] p-5 flex flex-col items-center justify-center text-center transition-all"
@@ -14,14 +27,12 @@ function SystemCard({ name, desc, color }: { name: string; desc: string; color: 
         background: "var(--surface)",
         border: "1.5px solid var(--border)",
       }}
-      onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--primary)")}
-      onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
     >
       <div
-        className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold mb-2"
+        className="w-10 h-10 rounded-lg flex items-center justify-center text-white mb-2"
         style={{ background: color }}
       >
-        {name.charAt(0)}
+        <Icon size={18} />
       </div>
       <div className="font-bold text-[14px]">{name}</div>
       <div className="text-[12px] text-muted-foreground mt-0.5">{desc}</div>
@@ -38,14 +49,6 @@ const partnerships = [
     badgeColor: "#10B981",
     bg: "linear-gradient(135deg, #0A1628 0%, #142038 100%)",
     overlay: true,
-  },
-  {
-    micro: "PESQUISA",
-    name: "Universidades e centros de pesquisa",
-    desc: "Colaborações para validação científica dos modelos de IA clínica da plataforma.",
-    badge: "● Em desenvolvimento",
-    badgeColor: "#10B981",
-    bg: "#1a3060",
   },
   {
     micro: "SEJA PARCEIRO",
@@ -68,36 +71,22 @@ export function Integrations() {
               Funciona com o prontuário que você já usa.
             </h2>
             <p className="mt-4 text-[17px] text-muted-foreground leading-[1.65]">
-              A MindMed não é um prontuário eletrônico. Ela se integra aos
-              maiores sistemas do Brasil, exportando documentação diretamente
-              para onde você já trabalha.
+              A MindMed não é um prontuário eletrônico. A documentação clínica
+              sai pronta para ser usada no sistema que você já tem — via PDF,
+              API, e-mail ou copiar e colar.
             </p>
-            <a href="#planos" className="btn-primary mt-6">
-              Ver todas as integrações →
-            </a>
           </div>
 
           <div className="grid grid-cols-3 gap-3.5">
-            {systems.map((s) => (
-              <SystemCard key={s.name} {...s} />
+            {exportOptions.map((s) => (
+              <ExportCard key={s.name} {...s} />
             ))}
-            <div
-              className="rounded-[14px] p-5 flex flex-col items-center justify-center text-center"
-              style={{
-                background: "var(--surface)",
-                border: "1.5px dashed var(--border)",
-                color: "var(--muted-foreground)",
-              }}
-            >
-              <div className="font-bold text-[14px]">+ Em breve</div>
-              <div className="text-[12px] mt-0.5">+8 sistemas</div>
-            </div>
           </div>
         </div>
 
         <div className="mt-16">
           <h3 className="h3 mb-7">Parcerias institucionais</h3>
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 gap-5">
             {partnerships.map((p) => (
               <div
                 key={p.name}

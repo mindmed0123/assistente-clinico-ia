@@ -28,7 +28,8 @@ export function FinalCTA() {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-[14px]">
           <a href="https://acesso.mindmed.online" className="btn-primary">
-            Começar gratuitamente — 30 dias
+            Começar gratuitamente — 7 dias
+
           </a>
           <a href="mailto:mindmedcontato@gmail.com" className="btn-outline-dark">
             Falar com a equipe
