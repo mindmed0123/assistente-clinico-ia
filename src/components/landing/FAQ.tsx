@@ -3,7 +3,7 @@ import { Plus } from "lucide-react";
 
 const faqs = [
   {
-  {
+
     q: "A MindMed substitui meu prontuário eletrônico?",
     a: "Não. A MindMed é uma camada de inteligência clínica que funciona junto ao seu prontuário atual. Ela documenta, apoia o raciocínio clínico e oferece telemedicina — exportando tudo para o sistema que você já usa, via PDF, e-mail, API ou copiar e colar.",
   },
