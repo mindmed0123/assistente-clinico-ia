@@ -3,13 +3,15 @@ import { Check } from "lucide-react";
 const plans = [
   {
     label: "BÁSICO",
-    price: "R$ 0",
-    period: "Grátis por 30 dias",
+  {
+    label: "BÁSICO",
+    price: "R$ 149",
+    period: "por mês · 7 dias grátis para começar",
     features: [
       "Avicena IA (50 consultas/mês)",
       "Documentação automática",
       "5 templates personalizados",
-      "Integração básica com prontuário",
+      "Exportação para qualquer prontuário",
     ],
     cta: "Começar grátis",
     ctaHref: "https://acesso.mindmed.online",
@@ -17,13 +19,13 @@ const plans = [
   },
   {
     label: "PROFISSIONAL",
-    price: "R$ 249",
-    period: "por mês",
+    price: "R$ 299",
+    period: "por mês · 7 dias grátis para começar",
     features: [
       "Avicena IA ilimitado",
       "Telemedicina integrada",
       "Templates ilimitados",
-      "Todas as integrações com prontuários",
+      "Exportação avançada (PDF, API, e-mail)",
       "Suporte prioritário",
       "Relatórios e estatísticas",
     ],
@@ -49,6 +51,8 @@ const plans = [
   },
 ];
 
+];
+
 export function Pricing() {
   return (
     <section
@@ -63,7 +67,7 @@ export function Pricing() {
             Quanto custa ter uma IA clínica ao seu lado?
           </h2>
           <p className="mt-4 text-[17px] text-muted-foreground">
-            Comece grátis por 30 dias. Cancele quando quiser.
+            Comece grátis por 7 dias. Cancele quando quiser.
           </p>
         </div>
 

@@ -21,7 +21,8 @@ function AvicenaChat() {
         <div>
           <div className="text-white text-[15px] font-bold">Avicena</div>
           <div className="text-[12px]" style={{ color: "rgba(255,255,255,0.40)" }}>
-            Assistente Clínico IA · Online
+            Avicena IA · Chat Clínico
+
           </div>
         </div>
       </div>
@@ -120,16 +121,16 @@ export function Features() {
                   ✦ Avicena IA
                 </span>
                 <h3 className="mt-5 text-[28px] font-extrabold tracking-[-0.5px] text-white leading-tight">
-                  Seu assistente clínico com inteligência real.
+                  Tire suas dúvidas clínicas em segundos.
                 </h3>
                 <p
                   className="mt-4 text-[15px] leading-[1.65]"
                   style={{ color: "rgba(255,255,255,0.60)" }}
                 >
-                  Avicena entende o contexto de cada atendimento, analisa as
-                  informações do paciente e responde com precisão baseada em
-                  evidências científicas — apoiando seu raciocínio clínico em
-                  tempo real.
+                  Um chat clínico em tempo real para o médico consultar durante
+                  o atendimento — interações medicamentosas, diagnósticos
+                  diferenciais e protocolos, com respostas baseadas em
+                  evidências e fontes citadas.
                 </p>
                 <p
                   className="mt-3 italic text-[13px]"

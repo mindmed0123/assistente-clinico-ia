@@ -6,21 +6,21 @@ const items = [
       "O Avicena virou parte do meu raciocínio clínico. Antes eu passava minutos pesquisando interações medicamentosas. Hoje recebo a resposta em segundos, com a referência bibliográfica já incluída.",
     name: "Dr. Rafael M.",
     role: "Clínico Geral · São Paulo",
-    emoji: "👨‍⚕️",
+    avatar: "https://i.pravatar.cc/96?img=12",
   },
   {
     quote:
       "A telemedicina integrada foi o que me fez escolher a MindMed. Não preciso mais de 3 plataformas diferentes. Consulto, documento e assino tudo no mesmo lugar.",
     name: "Dra. Camila S.",
     role: "Cirurgiã Vascular · Rio de Janeiro",
-    emoji: "👩‍⚕️",
+    avatar: "https://i.pravatar.cc/96?img=47",
   },
   {
     quote:
       "Reduzi 40% do tempo que eu passava documentando. Meus templates são completamente personalizados para cirurgia vascular. A MindMed me devolveu tempo para cuidar de mais pacientes.",
     name: "Dr. André P.",
     role: "Angiologista · Porto Alegre",
-    emoji: "🧑‍⚕️",
+    avatar: "https://i.pravatar.cc/96?img=33",
   },
 ];
 
@@ -54,12 +54,13 @@ export function Testimonials() {
                 "{t.quote}"
               </p>
               <div className="flex items-center gap-3 mt-6">
-                <div
-                  className="w-11 h-11 rounded-full flex items-center justify-center text-xl"
+                <img
+                  src={t.avatar}
+                  alt={t.name}
+                  loading="lazy"
+                  className="w-11 h-11 rounded-full object-cover"
                   style={{ background: "var(--primary-light)" }}
-                >
-                  {t.emoji}
-                </div>
+                />
                 <div>
                   <div className="font-bold text-[14px]">{t.name}</div>
                   <div className="text-[13px] text-muted-foreground">
