@@ -86,6 +86,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "MindMed — Inteligência Clínica para Médicos" },
+      { name: "description", content: "MindMed is an AI clinical platform for Brazilian doctors, offering real-time medical reasoning, integrated telemedicine, and automated documentation." },
+      { property: "og:description", content: "MindMed is an AI clinical platform for Brazilian doctors, offering real-time medical reasoning, integrated telemedicine, and automated documentation." },
+      { name: "twitter:description", content: "MindMed is an AI clinical platform for Brazilian doctors, offering real-time medical reasoning, integrated telemedicine, and automated documentation." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/95d8d7b9-b90b-4e35-a3f7-1dd959aba34d/id-preview-db4d4fd0--4dd44935-3af9-4fe3-a730-e68d237e4bfe.lovable.app-1780002550519.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/95d8d7b9-b90b-4e35-a3f7-1dd959aba34d/id-preview-db4d4fd0--4dd44935-3af9-4fe3-a730-e68d237e4bfe.lovable.app-1780002550519.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
