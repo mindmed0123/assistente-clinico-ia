@@ -1,6 +1,6 @@
 import { FileText, Code2, Mail, ClipboardCopy, Zap, Lock } from "lucide-react";
 
-const exports = [
+const exportOptions = [
   { name: "PDF", desc: "Exportação de laudos", icon: FileText, color: "#DC2626" },
   { name: "API", desc: "Integração programática", icon: Code2, color: "#2C70DD" },
   { name: "E-mail", desc: "Envio direto", icon: Mail, color: "#7C3AED" },
@@ -78,7 +78,7 @@ export function Integrations() {
           </div>
 
           <div className="grid grid-cols-3 gap-3.5">
-            {exports.map((s) => (
+            {exportOptions.map((s) => (
               <ExportCard key={s.name} {...s} />
             ))}
           </div>
