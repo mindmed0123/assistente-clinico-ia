@@ -36,7 +36,7 @@ const tiers = [
 
 export function Scale() {
   return (
-    <section className="bg-white py-[72px] md:py-[120px]">
+    <section className="bg-white py-[56px] md:py-[120px]">
       <div className="container-inner">
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 md:gap-16">
           <div>

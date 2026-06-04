@@ -69,7 +69,7 @@ const costs = [
 
 export function Pricing() {
   return (
-    <section id="planos" className="py-[72px] md:py-[120px] bg-white">
+    <section id="planos" className="py-[56px] md:py-[120px] bg-white">
       <div className="container-inner">
         {/* Intro */}
         <div className="max-w-[820px]">

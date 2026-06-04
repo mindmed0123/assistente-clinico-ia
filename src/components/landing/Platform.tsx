@@ -29,7 +29,7 @@ export function Platform() {
   return (
     <section
       id="plataforma"
-      className="py-[72px] md:py-[120px]"
+      className="py-[56px] md:py-[120px]"
       style={{ background: "var(--surface)" }}
     >
       <div className="container-inner">

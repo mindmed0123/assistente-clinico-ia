@@ -33,7 +33,7 @@ const cases = [
 
 export function UseCases() {
   return (
-    <section id="casos" className="bg-white py-[72px] md:py-[120px]">
+    <section id="casos" className="bg-white py-[56px] md:py-[120px]">
       <div className="container-inner">
         <div className="max-w-[760px]">
           <div className="eyebrow">Casos de uso</div>

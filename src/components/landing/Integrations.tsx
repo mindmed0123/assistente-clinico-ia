@@ -62,7 +62,7 @@ const partnerships = [
 
 export function Integrations() {
   return (
-    <section id="integracoes" className="bg-white py-[64px] md:py-[100px]">
+    <section id="integracoes" className="bg-white py-[48px] md:py-[100px]">
       <div className="container-inner">
         <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>

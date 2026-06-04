@@ -14,7 +14,7 @@ export function Institutions() {
   return (
     <section
       id="instituicoes"
-      className="py-[72px] md:py-[120px]"
+      className="py-[56px] md:py-[120px]"
       style={{ background: "var(--surface)" }}
     >
       <div className="container-inner">
@@ -25,7 +25,7 @@ export function Institutions() {
           </h2>
         </div>
 
-        <div className="mt-14 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-stretch">
+        <div className="mt-10 md:mt-14 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-stretch">
           <div className="bg-white border border-border rounded-2xl overflow-hidden">
             {partners.map((p, i) => (
               <div

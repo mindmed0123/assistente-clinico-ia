@@ -311,7 +311,7 @@ export function Hero() {
         </div>
 
         {/* Premium dashboard - hidden on small screens, shown md+ */}
-        <div className="hidden md:block mt-20 fade-up" style={{ animationDelay: ".28s" }}>
+        <div className="hidden md:block mt-10 md:mt-20 fade-up" style={{ animationDelay: ".28s" }}>
           <Dashboard />
         </div>
 

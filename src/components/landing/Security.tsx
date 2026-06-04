@@ -44,7 +44,7 @@ export function Security() {
   return (
     <section
       id="governanca"
-      className="py-[72px] md:py-[120px]"
+      className="py-[56px] md:py-[120px]"
       style={{ background: "var(--surface)" }}
     >
       <div className="container-inner">

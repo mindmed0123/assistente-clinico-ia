@@ -64,7 +64,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 pt-7 border-t border-border flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] tracking-[0.12em] uppercase text-muted-foreground">
+        <div className="mt-10 md:mt-20 pt-7 border-t border-border flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] tracking-[0.12em] uppercase text-muted-foreground">
           <div>© 2026 MindMed Tecnologia em Saúde Ltda.</div>
           <div className="flex gap-6">
             <span>CNPJ sob registro institucional</span>

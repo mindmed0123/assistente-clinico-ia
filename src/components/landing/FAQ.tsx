@@ -34,7 +34,7 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-[64px] md:py-[100px]" style={{ background: "var(--surface)" }}>
+    <section id="faq" className="py-[48px] md:py-[100px]" style={{ background: "var(--surface)" }}>
       <div className="container-inner max-w-[760px] mx-auto">
         <div className="text-center mb-12">
           <span className="section-label">Perguntas frequentes</span>

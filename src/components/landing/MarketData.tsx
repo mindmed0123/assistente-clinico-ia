@@ -47,7 +47,7 @@ function MiniBars({ data }: { data: number[] }) {
 
 export function MarketData() {
   return (
-    <section className="py-[72px] md:py-[120px]" style={{ background: "var(--surface)" }}>
+    <section className="py-[56px] md:py-[120px]" style={{ background: "var(--surface)" }}>
       <div className="container-inner">
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 md:gap-16">
           <div>
