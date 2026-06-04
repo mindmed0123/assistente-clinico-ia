@@ -245,7 +245,7 @@ export function Pricing() {
 
                 {/* Features */}
                 <ul className="mt-6 space-y-3 flex-1">
-                  {p.features.map((f) => (
+                  {(isExpanded ? p.features : p.features.slice(0, 3)).map((f) => (
                     <li
                       key={f}
                       className="flex items-start gap-2.5 text-[14px] leading-[1.5]"
@@ -263,6 +263,31 @@ export function Pricing() {
                       {f}
                     </li>
                   ))}
+                  {p.features.length > 3 && (
+                    <li>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setExpandedCard(isExpanded ? null : p.code)
+                        }
+                        className="inline-flex items-center gap-1 text-[13px] font-medium transition-colors"
+                        style={{
+                          color: hi ? "#93C5FD" : "var(--primary)",
+                        }}
+                      >
+                        {isExpanded
+                          ? "Ver menos"
+                          : `Ver todos os recursos (+${p.features.length - 3})`}
+                        <ChevronDown
+                          size={13}
+                          className="transition-transform"
+                          style={{
+                            transform: isExpanded ? "rotate(180deg)" : "none",
+                          }}
+                        />
+                      </button>
+                    </li>
+                  )}
                 </ul>
 
                 {/* CTA */}
@@ -299,25 +324,20 @@ export function Pricing() {
           })}
         </div>
 
-        {/* Cost comparison */}
-        <div className="mt-24">
+        {/* Cost comparison - compact */}
+        <div className="mt-14 md:mt-24">
           <div className="max-w-[720px]">
             <div className="eyebrow-muted">Comparação de custo</div>
-            <h3 className="h2 mt-5 text-ink" style={{ fontSize: "clamp(24px, 3vw, 36px)" }}>
+            <h3 className="h2 mt-4 md:mt-5 text-ink" style={{ fontSize: "clamp(22px, 3vw, 36px)" }}>
               O custo de não automatizar.
             </h3>
-            <p className="lede mt-5">
-              Profissionais de apoio resolvem parte da carga documental — mas
-              a um custo mensal incompatível com a escala de uma prática
-              clínica moderna.
-            </p>
           </div>
 
-          <div className="mt-10 bg-white border border-border rounded-2xl overflow-hidden">
+          <div className="mt-6 md:mt-10 bg-white border border-border rounded-2xl overflow-hidden">
             {costs.map((c, i) => (
               <div
                 key={c.label}
-                className="grid grid-cols-[1fr_auto] items-center gap-6 px-7 md:px-10 py-7"
+                className="grid grid-cols-[1fr_auto] items-center gap-4 md:gap-6 px-4 md:px-10 py-4 md:py-7"
                 style={{
                   borderTop: i === 0 ? "none" : "1px solid var(--border)",
                   background: c.highlight ? "var(--primary-light)" : "#fff",
@@ -325,7 +345,7 @@ export function Pricing() {
               >
                 <div>
                   <div
-                    className="text-[15.5px] font-semibold"
+                    className="text-[14px] md:text-[15.5px] font-semibold leading-snug"
                     style={{
                       color: c.highlight ? "var(--primary-dark)" : "var(--ink)",
                     }}
@@ -333,21 +353,21 @@ export function Pricing() {
                     {c.label}
                   </div>
                   {c.highlight && (
-                    <div className="mt-1 font-mono text-[10.5px] tracking-[0.14em] uppercase text-primary">
-                      ✦ Plano recomendado
+                    <div className="mt-0.5 md:mt-1 font-mono text-[9.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-primary">
+                      ✦ Recomendado
                     </div>
                   )}
                 </div>
-                <div className="text-right">
+                <div className="text-right whitespace-nowrap">
                   <div
-                    className="text-[22px] md:text-[28px] font-semibold tabular-nums tracking-[-0.025em]"
+                    className="text-[16px] md:text-[28px] font-semibold tabular-nums tracking-[-0.025em]"
                     style={{
                       color: c.highlight ? "var(--primary)" : "var(--ink)",
                     }}
                   >
                     {c.value}
                     <span
-                      className="text-[14px] font-normal ml-1"
+                      className="text-[12px] md:text-[14px] font-normal ml-1"
                       style={{
                         color: c.highlight
                           ? "var(--primary-dark)"
@@ -362,8 +382,8 @@ export function Pricing() {
             ))}
           </div>
 
-          <div className="mt-6 font-mono text-[11px] tracking-[0.12em] uppercase text-muted-foreground">
-            Fontes · Catho / Glassdoor · Faixas salariais médias no Brasil, 2025
+          <div className="mt-4 md:mt-6 font-mono text-[10px] md:text-[11px] tracking-[0.12em] uppercase text-muted-foreground">
+            Fontes · Catho / Glassdoor · 2025
           </div>
         </div>
       </div>
