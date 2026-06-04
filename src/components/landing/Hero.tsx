@@ -286,6 +286,28 @@ export function Hero() {
               Explorar a plataforma →
             </a>
           </div>
+
+          <div
+            className="mt-8 flex items-center gap-3 fade-up"
+            style={{ animationDelay: ".22s" }}
+          >
+            <div className="flex -space-x-2">
+              {[12, 47, 33, 5, 22].map((id) => (
+                <img
+                  key={id}
+                  src={`https://i.pravatar.cc/64?img=${id}`}
+                  alt=""
+                  loading="lazy"
+                  className="w-7 h-7 rounded-full object-cover ring-2 ring-white"
+                />
+              ))}
+            </div>
+            <p className="text-[13.5px] text-muted-foreground leading-[1.5]">
+              Mais de <span className="font-semibold text-ink">6.000 médicos</span>{" "}
+              já utilizaram a MindMed para gerar mais de{" "}
+              <span className="font-semibold text-ink">200.000 documentos clínicos</span>.
+            </p>
+          </div>
         </div>
 
         {/* Premium dashboard */}
