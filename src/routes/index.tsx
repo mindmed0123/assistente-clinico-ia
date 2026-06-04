@@ -42,18 +42,18 @@ function Index() {
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Hero />
-      <TrustBar />
       <SocialProof />
+      <Impact />
+      <Pricing />
+      <TrustBar />
       <Problem />
       <MarketData />
-      <Impact />
       <Platform />
       <Ecosystem />
       <Security />
       <Scale />
       <UseCases />
       <Institutions />
-      <Pricing />
       <FinalCTA />
       <Footer />
     </main>
