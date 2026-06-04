@@ -29,7 +29,7 @@ export function Platform() {
   return (
     <section
       id="plataforma"
-      className="py-[72px] md:py-[120px]"
+      className="py-[56px] md:py-[120px]"
       style={{ background: "var(--surface)" }}
     >
       <div className="container-inner">
@@ -45,14 +45,50 @@ export function Platform() {
           </p>
         </div>
 
+        {/* Mobile carousel */}
+        <div className="md:hidden mt-10 m-carousel">
+          {layers.map((l) => (
+            <div
+              key={l.code}
+              className="bg-white border border-border rounded-2xl p-6 relative overflow-hidden"
+            >
+              <div
+                className="absolute left-0 top-0 bottom-0 w-1"
+                style={{ background: "var(--primary)" }}
+              />
+              <div className="font-mono text-[11px] tracking-[0.16em] text-primary">
+                {l.code}
+              </div>
+              <div className="h3 mt-2 text-ink">{l.name}</div>
+              <p className="mt-3 text-[14px] leading-[1.6] text-muted-foreground">
+                {l.desc}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                {l.items.map((it) => (
+                  <span
+                    key={it}
+                    className="font-mono text-[10.5px] tracking-[0.1em] uppercase px-2.5 py-1 rounded border border-border bg-surface text-ink-3"
+                  >
+                    {it}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-3 md:hidden font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground/70">
+          ← deslize para ver as 4 camadas →
+        </div>
+
+        {/* Desktop table */}
         <div
-          className="mt-10 md:mt-16 bg-white border border-border rounded-2xl overflow-hidden"
+          className="hidden md:block mt-10 md:mt-16 bg-white border border-border rounded-2xl overflow-hidden"
           style={{ boxShadow: "0 20px 60px -30px rgba(44,112,221,0.20)" }}
         >
           {layers.map((l, i) => (
             <div
               key={l.code}
-              className="grid grid-cols-1 md:grid-cols-[120px_1.1fr_1.6fr_1fr] gap-3 md:gap-10 px-5 md:px-10 py-7 md:py-9 relative"
+              className="grid grid-cols-[120px_1.1fr_1.6fr_1fr] gap-10 px-10 py-9 relative"
               style={{
                 borderTop: i === 0 ? "none" : "1px solid var(--border)",
               }}
@@ -64,14 +100,14 @@ export function Platform() {
                   opacity: 1 - i * 0.18,
                 }}
               />
-              <div className="font-mono text-[11px] md:text-[12px] tracking-[0.16em] text-primary md:pt-1">
+              <div className="font-mono text-[12px] tracking-[0.16em] text-primary pt-1">
                 {l.code}
               </div>
               <div className="h3 text-ink">{l.name}</div>
-              <div className="text-[14.5px] md:text-[15px] leading-[1.6] text-muted-foreground">
+              <div className="text-[15px] leading-[1.6] text-muted-foreground">
                 {l.desc}
               </div>
-              <div className="flex flex-wrap gap-1.5 md:justify-end mt-1 md:mt-0">
+              <div className="flex flex-wrap gap-1.5 justify-end">
                 {l.items.map((it) => (
                   <span
                     key={it}

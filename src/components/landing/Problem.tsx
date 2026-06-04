@@ -23,7 +23,7 @@ const points = [
 
 export function Problem() {
   return (
-    <section className="bg-white py-[72px] md:py-[120px] border-t border-border">
+    <section className="bg-white py-[56px] md:py-[120px] border-t border-border">
       <div className="container-inner">
         <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 md:gap-16">
           <div>
@@ -39,14 +39,14 @@ export function Problem() {
           </div>
         </div>
 
-        <div className="mt-20 grid md:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden border border-border">
+        <div className="mt-10 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden border border-border">
           {points.map((p) => (
-            <div key={p.n} className="bg-white p-9">
+            <div key={p.n} className="bg-white p-6 md:p-9">
               <div className="font-mono text-[12px] text-muted-foreground tracking-widest">
                 {p.n}
               </div>
               <h3 className="h3 mt-3 text-ink">{p.title}</h3>
-              <p className="mt-3 text-[15px] leading-[1.65] text-muted-foreground">
+              <p className="mt-2 md:mt-3 text-[14px] md:text-[15px] leading-[1.6] md:leading-[1.65] text-muted-foreground">
                 {p.body}
               </p>
             </div>

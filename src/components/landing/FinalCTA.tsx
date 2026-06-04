@@ -1,6 +1,6 @@
 export function FinalCTA() {
   return (
-    <section className="py-[140px]" style={{ background: "var(--ink)" }}>
+    <section className="py-[64px] md:py-[140px]" style={{ background: "var(--ink)" }}>
       <div className="container-inner">
         <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 md:gap-16 items-end">
           <div>

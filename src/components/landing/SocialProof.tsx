@@ -76,12 +76,11 @@ function StatCard({ stat, active }: { stat: Stat; active: boolean }) {
 
   return (
     <div
-      className="relative bg-white p-6 md:p-8 overflow-hidden group"
+      className="relative bg-white p-5 md:p-8 overflow-hidden group"
       style={{
         border: "1px solid var(--border)",
       }}
     >
-      {/* top accent */}
       <div
         aria-hidden
         className="absolute top-0 left-0 right-0 h-[3px]"
@@ -90,35 +89,30 @@ function StatCard({ stat, active }: { stat: Stat; active: boolean }) {
             "linear-gradient(90deg, #2C70DD 0%, #1A56C4 100%)",
         }}
       />
-      <div className="flex items-center justify-between">
-        <div
-          className="w-9 h-9 rounded-md flex items-center justify-center"
-          style={{
-            background: "rgba(44,112,221,0.08)",
-            color: "var(--primary)",
-          }}
-        >
-          <Icon size={18} strokeWidth={1.75} />
-        </div>
-        <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
-          MindMed · 2026
-        </span>
+      <div
+        className="w-8 h-8 md:w-9 md:h-9 rounded-md flex items-center justify-center"
+        style={{
+          background: "rgba(44,112,221,0.08)",
+          color: "var(--primary)",
+        }}
+      >
+        <Icon size={16} strokeWidth={1.75} />
       </div>
 
       <div
-        className="mt-6 font-semibold text-ink tabular-nums leading-none"
+        className="mt-4 md:mt-6 font-semibold text-ink tabular-nums leading-none"
         style={{
-          fontSize: "clamp(40px, 4.4vw, 56px)",
+          fontSize: "clamp(26px, 4.4vw, 56px)",
           letterSpacing: "-0.035em",
         }}
       >
         {display}
       </div>
 
-      <div className="mt-4 text-[14.5px] font-medium text-ink">
+      <div className="mt-3 md:mt-4 text-[13px] md:text-[14.5px] font-medium text-ink leading-snug">
         {stat.label}
       </div>
-      <div className="mt-1.5 text-[13px] text-muted-foreground leading-[1.55]">
+      <div className="mt-1 md:mt-1.5 text-[12px] md:text-[13px] text-muted-foreground leading-[1.5] hidden sm:block">
         {stat.caption}
       </div>
     </div>
@@ -150,7 +144,7 @@ export function SocialProof() {
   return (
     <section
       id="prova-social"
-      className="py-[64px] md:py-[110px]"
+      className="py-[48px] md:py-[110px]"
       style={{
         background:
           "linear-gradient(180deg, #FFFFFF 0%, var(--surface) 100%)",
@@ -171,7 +165,7 @@ export function SocialProof() {
         </div>
 
         <div
-          className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px rounded-xl overflow-hidden"
+          className="mt-8 md:mt-14 grid grid-cols-2 lg:grid-cols-4 gap-px rounded-xl overflow-hidden"
           style={{
             border: "1px solid var(--border)",
             background: "var(--border)",
