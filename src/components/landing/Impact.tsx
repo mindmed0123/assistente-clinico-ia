@@ -13,7 +13,7 @@ export function Impact() {
           <div>
             <div className="eyebrow">Impacto operacional</div>
             <h2 className="h2 mt-5 text-ink">
-              Eficiência mensurável, em escala assistencial.
+              Eficiência <em>mensurável</em>, em escala assistencial.
             </h2>
           </div>
           <p className="lede max-w-[520px]">
@@ -22,24 +22,19 @@ export function Impact() {
           </p>
         </div>
 
-        <div className="mt-16 border-t border-border">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4">
-            {metrics.map((m, i) => (
-              <div
-                key={m.l}
-                className="py-10 px-2 border-b border-border lg:border-b-0"
-                style={{
-                  borderRight:
-                    i < metrics.length - 1 ? "1px solid var(--border)" : "none",
-                }}
-              >
-                <div className="num">{m.v}</div>
-                <div className="mt-5 text-[14px] leading-[1.55] text-muted-foreground max-w-[220px]">
-                  {m.l}
-                </div>
+        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-2xl overflow-hidden">
+          {metrics.map((m) => (
+            <div key={m.l} className="bg-white p-9 relative">
+              <div className="num text-primary">{m.v}</div>
+              <div className="mt-6 text-[14px] leading-[1.55] text-muted-foreground max-w-[240px]">
+                {m.l}
               </div>
-            ))}
-          </div>
+              <div
+                className="absolute left-0 top-0 h-[3px] w-12"
+                style={{ background: "var(--primary)" }}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

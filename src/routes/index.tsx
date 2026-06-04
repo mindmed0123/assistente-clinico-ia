@@ -8,6 +8,7 @@ import { Impact } from "@/components/landing/Impact";
 import { Platform } from "@/components/landing/Platform";
 import { Ecosystem } from "@/components/landing/Ecosystem";
 import { Security } from "@/components/landing/Security";
+import { Scale } from "@/components/landing/Scale";
 import { UseCases } from "@/components/landing/UseCases";
 import { Institutions } from "@/components/landing/Institutions";
 import { FinalCTA } from "@/components/landing/FinalCTA";
@@ -46,6 +47,7 @@ function Index() {
       <Platform />
       <Ecosystem />
       <Security />
+      <Scale />
       <UseCases />
       <Institutions />
       <FinalCTA />

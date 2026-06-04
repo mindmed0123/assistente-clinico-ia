@@ -3,21 +3,25 @@ const layers = [
     code: "L4",
     name: "Aplicações Clínicas",
     desc: "Documentação assistida, consulta remota, gestão de laudos e templates institucionais por especialidade.",
+    items: ["Clinical", "Care", "Avicena"],
   },
   {
     code: "L3",
     name: "Camada de Inteligência",
-    desc: "Modelos clínicos especializados com referência a literatura médica auditável (UpToDate, PubMed, diretrizes nacionais).",
+    desc: "Modelos clínicos especializados com referência a literatura médica auditável e diretrizes nacionais.",
+    items: ["Avicena Engine", "Clinical Reasoning", "Evidence Index"],
   },
   {
     code: "L2",
     name: "Governança & Identidade",
-    desc: "Controle de acesso, trilhas de auditoria, gestão de consentimento e políticas de retenção compatíveis com LGPD.",
+    desc: "Controle de acesso, trilhas de auditoria, gestão de consentimento e políticas de retenção.",
+    items: ["IAM", "Audit Trail", "Consent"],
   },
   {
     code: "L1",
     name: "Infraestrutura de Dados",
-    desc: "Armazenamento criptografado em repouso e em trânsito, residência de dados em território nacional, alta disponibilidade multi-região.",
+    desc: "Armazenamento criptografado, residência de dados em território nacional, alta disponibilidade multi-região.",
+    items: ["Data Plane", "Vault", "Multi-region"],
   },
 ];
 
@@ -29,10 +33,10 @@ export function Platform() {
       style={{ background: "var(--surface)" }}
     >
       <div className="container-inner">
-        <div className="max-w-[780px]">
+        <div className="max-w-[800px]">
           <div className="eyebrow">A plataforma</div>
           <h2 className="h2 mt-5 text-ink">
-            Uma arquitetura clínica em quatro camadas.
+            Uma <em>arquitetura clínica</em> em quatro camadas.
           </h2>
           <p className="lede mt-6">
             A MindMed Platform foi desenhada como uma stack vertical — da
@@ -41,21 +45,41 @@ export function Platform() {
           </p>
         </div>
 
-        <div className="mt-16 bg-white rounded-2xl border border-border overflow-hidden">
+        <div
+          className="mt-16 bg-white border border-border rounded-2xl overflow-hidden"
+          style={{ boxShadow: "0 20px 60px -30px rgba(44,112,221,0.20)" }}
+        >
           {layers.map((l, i) => (
             <div
               key={l.code}
-              className="grid grid-cols-[100px_1fr] md:grid-cols-[140px_1fr_1.4fr] gap-6 md:gap-10 px-7 md:px-10 py-8"
+              className="grid grid-cols-[80px_1fr] md:grid-cols-[120px_1.1fr_1.6fr_1fr] gap-6 md:gap-10 px-7 md:px-10 py-9 relative"
               style={{
                 borderTop: i === 0 ? "none" : "1px solid var(--border)",
               }}
             >
-              <div className="font-mono text-[12px] tracking-[0.14em] text-muted-foreground pt-1">
+              <div
+                className="absolute left-0 top-0 bottom-0 w-1"
+                style={{
+                  background: "var(--primary)",
+                  opacity: 1 - i * 0.18,
+                }}
+              />
+              <div className="font-mono text-[12px] tracking-[0.16em] text-primary pt-1">
                 {l.code}
               </div>
               <div className="h3 text-ink">{l.name}</div>
               <div className="text-[15px] leading-[1.65] text-muted-foreground col-span-2 md:col-span-1">
                 {l.desc}
+              </div>
+              <div className="flex flex-wrap gap-1.5 col-span-2 md:col-span-1 md:justify-end">
+                {l.items.map((it) => (
+                  <span
+                    key={it}
+                    className="font-mono text-[10.5px] tracking-[0.1em] uppercase px-2.5 py-1 rounded border border-border bg-surface text-ink-3"
+                  >
+                    {it}
+                  </span>
+                ))}
               </div>
             </div>
           ))}
