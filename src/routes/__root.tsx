@@ -90,8 +90,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "MindMed is an AI clinical platform for Brazilian doctors, offering real-time medical reasoning, integrated telemedicine, and automated documentation." },
       { property: "og:description", content: "MindMed is an AI clinical platform for Brazilian doctors, offering real-time medical reasoning, integrated telemedicine, and automated documentation." },
       { name: "twitter:description", content: "MindMed is an AI clinical platform for Brazilian doctors, offering real-time medical reasoning, integrated telemedicine, and automated documentation." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/95d8d7b9-b90b-4e35-a3f7-1dd959aba34d/id-preview-db4d4fd0--4dd44935-3af9-4fe3-a730-e68d237e4bfe.lovable.app-1780002550519.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/95d8d7b9-b90b-4e35-a3f7-1dd959aba34d/id-preview-db4d4fd0--4dd44935-3af9-4fe3-a730-e68d237e4bfe.lovable.app-1780002550519.png" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/iiiViKpKu9fWtIhiSfMR2Lxe6OV2/social-images/social-1780544265108-Banner_MindMed_560_x_460.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/iiiViKpKu9fWtIhiSfMR2Lxe6OV2/social-images/social-1780544265108-Banner_MindMed_560_x_460.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
