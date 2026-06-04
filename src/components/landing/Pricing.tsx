@@ -91,8 +91,7 @@ export function Pricing() {
             return (
               <div
                 key={p.code}
-                className="relative rounded-2xl p-6 md:p-8 flex flex-col lg:[&]:data-[hi=true]:-translate-y-2"
-                data-hi={hi}
+                className="relative rounded-2xl p-6 md:p-8 flex flex-col"
                 style={{
                   background: hi ? "var(--ink)" : "#fff",
                   border: hi
