@@ -1,4 +1,5 @@
-import { Check, ShieldCheck } from "lucide-react";
+import { useState } from "react";
+import { Check, ShieldCheck, ChevronDown } from "lucide-react";
 
 const plans = [
   {
@@ -68,26 +69,28 @@ const costs = [
 ];
 
 export function Pricing() {
+  const [expandedCard, setExpandedCard] = useState<string | null>("Pro");
+
   return (
     <section id="planos" className="py-[56px] md:py-[120px] bg-white">
       <div className="container-inner">
         {/* Intro */}
         <div className="max-w-[820px]">
           <div className="eyebrow">Planos</div>
-          <h2 className="h2 mt-5 text-ink">
+          <h2 className="h2 mt-4 md:mt-5 text-ink">
             Quanto vale <em>recuperar horas</em> do seu dia?
           </h2>
-          <p className="lede mt-6">
-            Médicos utilizam a MindMed para reduzir burocracia, acelerar
-            documentação clínica e voltar a focar no que realmente importa:
-            o paciente.
+          <p className="lede mt-4 md:mt-6">
+            Reduza burocracia, acelere a documentação e volte a focar no
+            paciente.
           </p>
         </div>
 
         {/* Plans */}
-        <div className="mt-10 md:mt-16 grid lg:grid-cols-3 gap-5 items-stretch">
+        <div className="mt-8 md:mt-16 grid lg:grid-cols-3 gap-5 items-stretch">
           {plans.map((p) => {
             const hi = p.highlighted;
+            const isExpanded = expandedCard === p.code;
             return (
               <div
                 key={p.code}
