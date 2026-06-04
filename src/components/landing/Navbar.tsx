@@ -1,14 +1,9 @@
 import { useEffect, useState } from "react";
+import mindmedLogo from "@/assets/mindmed-logo.png.asset.json";
 
 const Logo = () => (
-  <a href="#top" className="flex items-center gap-2.5">
-    <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
-      <rect width="32" height="32" rx="6" fill="#0B1220" />
-      <path
-        d="M8 23V9h2.5l5.5 8 5.5-8H24v14h-2.5v-9.5L16 21l-5.5-7.5V23H8z"
-        fill="#fff"
-      />
-    </svg>
+  <a href="#top" className="flex items-center gap-2">
+    <img src={mindmedLogo.url} alt="MindMed" className="h-7 w-7 object-contain" />
     <span className="text-[15px] font-semibold tracking-tight text-ink">
       MindMed
     </span>
