@@ -43,6 +43,7 @@ function Index() {
       <Navbar />
       <Hero />
       <TrustBar />
+      <SocialProof />
       <Problem />
       <MarketData />
       <Impact />
