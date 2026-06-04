@@ -55,11 +55,11 @@ export function Ecosystem() {
           </p>
         </div>
 
-        <div className="mt-10 md:mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border rounded-xl overflow-hidden">
+        <div className="mt-10 md:mt-16 m-carousel m-carousel-3 md:gap-px md:bg-border md:border md:border-border md:rounded-xl md:overflow-hidden">
           {products.map((p) => (
             <div
               key={p.code}
-              className="bg-white p-6 md:p-8 flex flex-col min-h-[230px]"
+              className="bg-white p-6 md:p-8 flex flex-col min-h-[200px] md:min-h-[230px] rounded-xl md:rounded-none border md:border-0 border-border"
             >
               <div className="flex items-center justify-between">
                 <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
@@ -71,12 +71,15 @@ export function Ecosystem() {
                   {p.tag}
                 </span>
               </div>
-              <h3 className="h3 mt-5 text-ink">{p.name}</h3>
-              <p className="mt-3 text-[14.5px] leading-[1.6] text-muted-foreground flex-1">
+              <h3 className="h3 mt-4 md:mt-5 text-ink">{p.name}</h3>
+              <p className="mt-2 md:mt-3 text-[14px] md:text-[14.5px] leading-[1.55] md:leading-[1.6] text-muted-foreground flex-1">
                 {p.desc}
               </p>
             </div>
           ))}
+        </div>
+        <div className="mt-3 md:hidden font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground/70">
+          ← deslize para ver mais →
         </div>
       </div>
     </section>

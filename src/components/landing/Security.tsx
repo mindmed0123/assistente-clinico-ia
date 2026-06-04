@@ -62,26 +62,24 @@ export function Security() {
           </p>
         </div>
 
-        <div className="mt-10 md:mt-16 bg-white border border-border rounded-2xl overflow-hidden">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 md:mt-16 md:bg-white md:border md:border-border md:rounded-2xl md:overflow-hidden">
+          <div className="m-carousel m-carousel-3">
             {pillars.map((p, i) => (
               <div
                 key={p.code}
-                className="p-9"
+                className="bg-white border border-border md:border-0 rounded-2xl md:rounded-none p-6 md:p-9"
                 style={{
                   borderBottom:
                     i < pillars.length - (pillars.length % 3 === 0 ? 3 : pillars.length % 3)
-                      ? "1px solid var(--border)"
-                      : "none",
-                  borderRight:
-                    (i + 1) % 3 !== 0 ? "1px solid var(--border)" : "none",
+                      ? undefined
+                      : undefined,
                 }}
               >
                 <div className="font-mono text-[11px] tracking-[0.14em] text-muted-foreground">
                   {p.code}
                 </div>
                 <h3 className="h3 mt-3 text-ink">{p.title}</h3>
-                <p className="mt-3 text-[14.5px] leading-[1.65] text-muted-foreground">
+                <p className="mt-2 md:mt-3 text-[14px] md:text-[14.5px] leading-[1.6] md:leading-[1.65] text-muted-foreground">
                   {p.body}
                 </p>
               </div>
