@@ -237,7 +237,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative pt-[140px] pb-[120px] overflow-hidden"
+      className="relative pt-[100px] md:pt-[140px] pb-[72px] md:pb-[120px] overflow-hidden"
       style={{
         background:
           "radial-gradient(ellipse 90% 70% at 50% -10%, rgba(44,112,221,0.10), transparent 60%), #FFFFFF",
@@ -310,8 +310,8 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Premium dashboard */}
-        <div className="mt-20 fade-up" style={{ animationDelay: ".28s" }}>
+        {/* Premium dashboard - hidden on small screens, shown md+ */}
+        <div className="hidden md:block mt-20 fade-up" style={{ animationDelay: ".28s" }}>
           <Dashboard />
         </div>
 
