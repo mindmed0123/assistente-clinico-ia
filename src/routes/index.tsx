@@ -2,31 +2,31 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { TrustBar } from "@/components/landing/TrustBar";
-import { StatsBar } from "@/components/landing/StatsBar";
-import { Features } from "@/components/landing/Features";
-import { Science } from "@/components/landing/Science";
+import { Problem } from "@/components/landing/Problem";
+import { MarketData } from "@/components/landing/MarketData";
+import { Impact } from "@/components/landing/Impact";
+import { Platform } from "@/components/landing/Platform";
+import { Ecosystem } from "@/components/landing/Ecosystem";
 import { Security } from "@/components/landing/Security";
-import { Integrations } from "@/components/landing/Integrations";
-import { Testimonials } from "@/components/landing/Testimonials";
-import { Pricing } from "@/components/landing/Pricing";
-import { FAQ } from "@/components/landing/FAQ";
+import { UseCases } from "@/components/landing/UseCases";
+import { Institutions } from "@/components/landing/Institutions";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "MindMed — Inteligência Clínica para Médicos" },
+      { title: "MindMed — Infraestrutura de Inteligência Clínica" },
       {
         name: "description",
         content:
-          "IA clínica com raciocínio médico real, telemedicina integrada e documentação automática. Avicena, seu assistente clínico com IA.",
+          "A infraestrutura de inteligência clínica para a medicina moderna. Documentação, decisão e governança em uma plataforma institucional, segura e auditável.",
       },
-      { property: "og:title", content: "MindMed — Inteligência Clínica para Médicos" },
+      { property: "og:title", content: "MindMed — Infraestrutura de Inteligência Clínica" },
       {
         property: "og:description",
         content:
-          "IA clínica, telemedicina e documentação automática em uma plataforma feita para médicos brasileiros.",
+          "Plataforma institucional para documentação, decisão clínica e governança de dados em saúde — projetada para operações de escala hospitalar.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -40,14 +40,14 @@ function Index() {
       <Navbar />
       <Hero />
       <TrustBar />
-      <StatsBar />
-      <Features />
-      <Science />
+      <Problem />
+      <MarketData />
+      <Impact />
+      <Platform />
+      <Ecosystem />
       <Security />
-      <Integrations />
-      <Testimonials />
-      <Pricing />
-      <FAQ />
+      <UseCases />
+      <Institutions />
       <FinalCTA />
       <Footer />
     </main>
