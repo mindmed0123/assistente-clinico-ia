@@ -52,7 +52,7 @@ export function Platform() {
           {layers.map((l, i) => (
             <div
               key={l.code}
-              className="grid grid-cols-[80px_1fr] md:grid-cols-[120px_1.1fr_1.6fr_1fr] gap-6 md:gap-10 px-7 md:px-10 py-9 relative"
+              className="grid grid-cols-[80px_1fr] md:grid-cols-[120px_1.1fr_1.6fr_1fr] gap-6 md:gap-10 px-5 md:px-10 py-7 md:py-9 relative"
               style={{
                 borderTop: i === 0 ? "none" : "1px solid var(--border)",
               }}

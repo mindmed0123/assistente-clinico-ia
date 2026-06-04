@@ -46,7 +46,7 @@ export function UseCases() {
           {cases.map((c) => (
             <div
               key={c.sector}
-              className="bg-white grid lg:grid-cols-[260px_1fr_1fr] gap-10 px-9 py-10"
+              className="bg-white grid lg:grid-cols-[260px_1fr_1fr] gap-10 px-5 md:px-9 py-7 md:py-10"
             >
               <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
                 {c.sector}

@@ -59,7 +59,7 @@ export function Ecosystem() {
           {products.map((p) => (
             <div
               key={p.code}
-              className="bg-white p-8 flex flex-col min-h-[230px]"
+              className="bg-white p-6 md:p-8 flex flex-col min-h-[230px]"
             >
               <div className="flex items-center justify-between">
                 <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">

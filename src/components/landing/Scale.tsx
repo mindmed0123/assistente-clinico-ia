@@ -56,7 +56,7 @@ export function Scale() {
           {tiers.map((t, i) => (
             <div
               key={t.code}
-              className="rounded-2xl p-9 relative overflow-hidden bg-white border"
+              className="rounded-2xl p-6 md:p-9 relative overflow-hidden bg-white border"
               style={{
                 borderColor: i === 2 ? "var(--primary)" : "var(--border)",
                 boxShadow:
