@@ -39,9 +39,9 @@ const products = [
 
 export function Ecosystem() {
   return (
-    <section id="ecossistema" className="bg-white py-[120px]">
+    <section id="ecossistema" className="bg-white py-[72px] md:py-[120px]">
       <div className="container-inner">
-        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16">
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 md:gap-16">
           <div>
             <div className="eyebrow">Ecossistema</div>
             <h2 className="h2 mt-5 text-ink">
@@ -55,11 +55,11 @@ export function Ecosystem() {
           </p>
         </div>
 
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border rounded-xl overflow-hidden">
+        <div className="mt-10 md:mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border rounded-xl overflow-hidden">
           {products.map((p) => (
             <div
               key={p.code}
-              className="bg-white p-8 flex flex-col min-h-[230px]"
+              className="bg-white p-6 md:p-8 flex flex-col min-h-[230px]"
             >
               <div className="flex items-center justify-between">
                 <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">

@@ -47,9 +47,9 @@ function MiniBars({ data }: { data: number[] }) {
 
 export function MarketData() {
   return (
-    <section className="py-[120px]" style={{ background: "var(--surface)" }}>
+    <section className="py-[72px] md:py-[120px]" style={{ background: "var(--surface)" }}>
       <div className="container-inner">
-        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16">
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 md:gap-16">
           <div>
             <div className="eyebrow">Mercado</div>
             <h2 className="h2 mt-5 text-ink">
@@ -63,7 +63,7 @@ export function MarketData() {
           </p>
         </div>
 
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-10 md:mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {stats.map((s) => (
             <div key={s.label} className="data-card">
               <div className="num text-primary">{s.value}</div>

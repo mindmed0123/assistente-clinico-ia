@@ -33,7 +33,7 @@ const cases = [
 
 export function UseCases() {
   return (
-    <section id="casos" className="bg-white py-[120px]">
+    <section id="casos" className="bg-white py-[72px] md:py-[120px]">
       <div className="container-inner">
         <div className="max-w-[760px]">
           <div className="eyebrow">Casos de uso</div>
@@ -42,11 +42,11 @@ export function UseCases() {
           </h2>
         </div>
 
-        <div className="mt-16 space-y-px bg-border border border-border rounded-2xl overflow-hidden">
+        <div className="mt-10 md:mt-16 space-y-px bg-border border border-border rounded-2xl overflow-hidden">
           {cases.map((c) => (
             <div
               key={c.sector}
-              className="bg-white grid lg:grid-cols-[260px_1fr_1fr] gap-10 px-9 py-10"
+              className="bg-white grid lg:grid-cols-[260px_1fr_1fr] gap-10 px-5 md:px-9 py-7 md:py-10"
             >
               <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
                 {c.sector}

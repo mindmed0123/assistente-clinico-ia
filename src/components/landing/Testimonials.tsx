@@ -26,7 +26,7 @@ const items = [
 
 export function Testimonials() {
   return (
-    <section id="depoimentos" className="bg-white py-[100px]">
+    <section id="depoimentos" className="bg-white py-[64px] md:py-[100px]">
       <div className="container-inner">
         <div className="text-center mb-14">
           <span className="section-label">Depoimentos</span>

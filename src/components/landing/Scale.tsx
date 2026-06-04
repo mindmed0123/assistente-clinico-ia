@@ -36,9 +36,9 @@ const tiers = [
 
 export function Scale() {
   return (
-    <section className="bg-white py-[120px]">
+    <section className="bg-white py-[72px] md:py-[120px]">
       <div className="container-inner">
-        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16">
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 md:gap-16">
           <div>
             <div className="eyebrow">Escalabilidade</div>
             <h2 className="h2 mt-5 text-ink">
@@ -52,11 +52,11 @@ export function Scale() {
           </p>
         </div>
 
-        <div className="mt-16 grid lg:grid-cols-3 gap-5">
+        <div className="mt-10 md:mt-16 grid lg:grid-cols-3 gap-5">
           {tiers.map((t, i) => (
             <div
               key={t.code}
-              className="rounded-2xl p-9 relative overflow-hidden bg-white border"
+              className="rounded-2xl p-6 md:p-9 relative overflow-hidden bg-white border"
               style={{
                 borderColor: i === 2 ? "var(--primary)" : "var(--border)",
                 boxShadow:

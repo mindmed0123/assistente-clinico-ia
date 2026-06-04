@@ -29,7 +29,7 @@ export function Platform() {
   return (
     <section
       id="plataforma"
-      className="py-[120px]"
+      className="py-[72px] md:py-[120px]"
       style={{ background: "var(--surface)" }}
     >
       <div className="container-inner">
@@ -46,13 +46,13 @@ export function Platform() {
         </div>
 
         <div
-          className="mt-16 bg-white border border-border rounded-2xl overflow-hidden"
+          className="mt-10 md:mt-16 bg-white border border-border rounded-2xl overflow-hidden"
           style={{ boxShadow: "0 20px 60px -30px rgba(44,112,221,0.20)" }}
         >
           {layers.map((l, i) => (
             <div
               key={l.code}
-              className="grid grid-cols-[80px_1fr] md:grid-cols-[120px_1.1fr_1.6fr_1fr] gap-6 md:gap-10 px-7 md:px-10 py-9 relative"
+              className="grid grid-cols-[80px_1fr] md:grid-cols-[120px_1.1fr_1.6fr_1fr] gap-6 md:gap-10 px-5 md:px-10 py-7 md:py-9 relative"
               style={{
                 borderTop: i === 0 ? "none" : "1px solid var(--border)",
               }}

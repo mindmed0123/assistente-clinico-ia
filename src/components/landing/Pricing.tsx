@@ -69,7 +69,7 @@ const costs = [
 
 export function Pricing() {
   return (
-    <section id="planos" className="py-[120px] bg-white">
+    <section id="planos" className="py-[72px] md:py-[120px] bg-white">
       <div className="container-inner">
         {/* Intro */}
         <div className="max-w-[820px]">
@@ -85,13 +85,13 @@ export function Pricing() {
         </div>
 
         {/* Plans */}
-        <div className="mt-16 grid lg:grid-cols-3 gap-5 items-stretch">
+        <div className="mt-10 md:mt-16 grid lg:grid-cols-3 gap-5 items-stretch">
           {plans.map((p) => {
             const hi = p.highlighted;
             return (
               <div
                 key={p.code}
-                className="relative rounded-2xl p-8 flex flex-col"
+                className="relative rounded-2xl p-6 md:p-8 flex flex-col"
                 style={{
                   background: hi ? "var(--ink)" : "#fff",
                   border: hi
@@ -101,7 +101,6 @@ export function Pricing() {
                   boxShadow: hi
                     ? "0 30px 60px -25px rgba(44,112,221,0.45), 0 0 0 1px rgba(44,112,221,0.20)"
                     : "none",
-                  transform: hi ? "translateY(-8px)" : "none",
                 }}
               >
                 {hi && (

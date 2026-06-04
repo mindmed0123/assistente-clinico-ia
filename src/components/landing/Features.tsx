@@ -88,7 +88,7 @@ function AvicenaChat() {
 
 export function Features() {
   return (
-    <section id="funcionalidades" className="bg-white py-[100px]">
+    <section id="funcionalidades" className="bg-white py-[64px] md:py-[100px]">
       <div className="container-inner">
         <div className="text-center mb-14">
           <span className="section-label">Funcionalidades</span>

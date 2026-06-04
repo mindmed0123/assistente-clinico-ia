@@ -7,9 +7,9 @@ const metrics = [
 
 export function Impact() {
   return (
-    <section className="bg-white py-[120px]">
+    <section className="bg-white py-[72px] md:py-[120px]">
       <div className="container-inner">
-        <div className="grid lg:grid-cols-2 gap-16 items-end">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-end">
           <div>
             <div className="eyebrow">Impacto operacional</div>
             <h2 className="h2 mt-5 text-ink">
@@ -22,9 +22,9 @@ export function Impact() {
           </p>
         </div>
 
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-2xl overflow-hidden">
+        <div className="mt-10 md:mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-2xl overflow-hidden">
           {metrics.map((m) => (
-            <div key={m.l} className="bg-white p-9 relative">
+            <div key={m.l} className="bg-white p-6 md:p-9 relative">
               <div className="num text-primary">{m.v}</div>
               <div className="mt-6 text-[14px] leading-[1.55] text-muted-foreground max-w-[240px]">
                 {m.l}

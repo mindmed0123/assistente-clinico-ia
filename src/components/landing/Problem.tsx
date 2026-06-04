@@ -23,9 +23,9 @@ const points = [
 
 export function Problem() {
   return (
-    <section className="bg-white py-[120px] border-t border-border">
+    <section className="bg-white py-[72px] md:py-[120px] border-t border-border">
       <div className="container-inner">
-        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-16">
+        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 md:gap-16">
           <div>
             <div className="eyebrow">O contexto</div>
             <h2 className="h2 mt-5 text-ink">

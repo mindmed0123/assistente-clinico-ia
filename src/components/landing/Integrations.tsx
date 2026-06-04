@@ -62,9 +62,9 @@ const partnerships = [
 
 export function Integrations() {
   return (
-    <section id="integracoes" className="bg-white py-[100px]">
+    <section id="integracoes" className="bg-white py-[64px] md:py-[100px]">
       <div className="container-inner">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
             <span className="section-label">Integrações</span>
             <h2 className="h2 mt-4">
@@ -84,7 +84,7 @@ export function Integrations() {
           </div>
         </div>
 
-        <div className="mt-16">
+        <div className="mt-10 md:mt-16">
           <h3 className="h3 mb-7">Parcerias institucionais</h3>
           <div className="grid md:grid-cols-2 gap-5">
             {partnerships.map((p) => (
