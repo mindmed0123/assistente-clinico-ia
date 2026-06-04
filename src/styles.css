@@ -106,15 +106,28 @@
   .btn-ghost:hover { background: var(--surface-2); }
 
   .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
+    display: inline-flex; align-items: center; gap: 10px;
     font-family: var(--font-mono);
-    font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+  .eyebrow::before {
+    content: ""; width: 22px; height: 1px; background: var(--primary); opacity: .9;
+  }
+  .eyebrow-muted {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--muted-foreground);
   }
-  .eyebrow::before {
-    content: ""; width: 18px; height: 1px; background: currentColor; opacity: .5;
+  .eyebrow-muted::before {
+    content: ""; width: 22px; height: 1px; background: currentColor; opacity: .5;
   }
+
+  .display em { color: var(--primary); }
+  .h2 em { color: var(--primary); }
 
   .pill {
     display: inline-flex; align-items: center; gap: 6px;
