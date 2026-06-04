@@ -288,10 +288,10 @@ export function Hero() {
           </div>
 
           <div
-            className="mt-8 flex items-center gap-3 fade-up"
+            className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3 fade-up"
             style={{ animationDelay: ".22s" }}
           >
-            <div className="flex -space-x-2">
+            <div className="flex -space-x-2 shrink-0">
               {[12, 47, 33, 5, 22].map((id) => (
                 <img
                   key={id}
@@ -302,7 +302,7 @@ export function Hero() {
                 />
               ))}
             </div>
-            <p className="text-[13.5px] text-muted-foreground leading-[1.5]">
+            <p className="text-[13px] sm:text-[13.5px] text-muted-foreground leading-[1.5] max-w-[480px]">
               Mais de <span className="font-semibold text-ink">6.000 médicos</span>{" "}
               já utilizaram a MindMed para gerar mais de{" "}
               <span className="font-semibold text-ink">200.000 documentos clínicos</span>.

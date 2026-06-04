@@ -30,7 +30,7 @@ export function Institutions() {
             {partners.map((p, i) => (
               <div
                 key={p.name}
-                className="grid grid-cols-[1fr_auto] gap-6 px-8 py-7"
+                className="flex flex-col sm:grid sm:grid-cols-[1fr_auto] gap-3 sm:gap-6 px-5 sm:px-8 py-6 sm:py-7"
                 style={{
                   borderTop: i === 0 ? "none" : "1px solid var(--border)",
                 }}
@@ -43,7 +43,7 @@ export function Institutions() {
                     {p.desc}
                   </div>
                 </div>
-                <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-ink-3 self-center px-3 py-1.5 rounded-md border border-border">
+                <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-ink-3 self-start sm:self-center px-3 py-1.5 rounded-md border border-border whitespace-nowrap">
                   {p.tag}
                 </div>
               </div>
@@ -51,16 +51,16 @@ export function Institutions() {
           </div>
 
           <figure
-            className="rounded-2xl p-10 flex flex-col justify-between"
+            className="rounded-2xl p-7 md:p-10 flex flex-col justify-between"
             style={{ background: "var(--ink)" }}
           >
             <blockquote
-              className="text-white text-[22px] leading-[1.4] tracking-[-0.015em]"
+              className="text-white text-[19px] md:text-[22px] leading-[1.4] tracking-[-0.015em]"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               “{quote.text}”
             </blockquote>
-            <figcaption className="mt-10 font-mono text-[11px] tracking-[0.14em] uppercase text-white/55">
+            <figcaption className="mt-8 md:mt-10 font-mono text-[11px] tracking-[0.14em] uppercase text-white/55">
               {quote.author}
             </figcaption>
           </figure>

@@ -52,7 +52,7 @@ export function Platform() {
           {layers.map((l, i) => (
             <div
               key={l.code}
-              className="grid grid-cols-[80px_1fr] md:grid-cols-[120px_1.1fr_1.6fr_1fr] gap-6 md:gap-10 px-5 md:px-10 py-7 md:py-9 relative"
+              className="grid grid-cols-1 md:grid-cols-[120px_1.1fr_1.6fr_1fr] gap-3 md:gap-10 px-5 md:px-10 py-7 md:py-9 relative"
               style={{
                 borderTop: i === 0 ? "none" : "1px solid var(--border)",
               }}
@@ -64,14 +64,14 @@ export function Platform() {
                   opacity: 1 - i * 0.18,
                 }}
               />
-              <div className="font-mono text-[12px] tracking-[0.16em] text-primary pt-1">
+              <div className="font-mono text-[11px] md:text-[12px] tracking-[0.16em] text-primary md:pt-1">
                 {l.code}
               </div>
               <div className="h3 text-ink">{l.name}</div>
-              <div className="text-[15px] leading-[1.65] text-muted-foreground col-span-2 md:col-span-1">
+              <div className="text-[14.5px] md:text-[15px] leading-[1.6] text-muted-foreground">
                 {l.desc}
               </div>
-              <div className="flex flex-wrap gap-1.5 col-span-2 md:col-span-1 md:justify-end">
+              <div className="flex flex-wrap gap-1.5 md:justify-end mt-1 md:mt-0">
                 {l.items.map((it) => (
                   <span
                     key={it}
