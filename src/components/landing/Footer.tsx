@@ -1,69 +1,78 @@
 const cols = [
   {
-    title: "Produto",
-    links: ["Funcionalidades", "Avicena IA", "Integrações", "Planos"],
+    title: "Plataforma",
+    links: ["Arquitetura", "Ecossistema", "Governança", "Integrações"],
   },
-  { title: "Empresa", links: ["Sobre", "Blog", "Parcerias", "Contato"] },
-  { title: "Legal", links: ["Termos de uso", "Privacidade", "LGPD", "Segurança"] },
+  {
+    title: "Soluções",
+    links: ["Hospitais e redes", "Operadoras", "Clínicas", "Sociedades médicas"],
+  },
+  {
+    title: "Institucional",
+    links: ["Sobre", "Parcerias", "Imprensa", "Contato comercial"],
+  },
+  {
+    title: "Conformidade",
+    links: ["LGPD", "CFM 2.314/2022", "Política de privacidade", "Termos de uso"],
+  },
 ];
 
 export function Footer() {
   return (
-    <footer style={{ background: "#0A1628" }} className="pt-16 pb-8 text-white/45">
+    <footer className="bg-white border-t border-border pt-20 pb-10">
       <div className="container-inner">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid lg:grid-cols-[1.4fr_2.6fr] gap-16">
           <div>
             <div className="flex items-center gap-2.5">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <rect width="32" height="32" rx="8" fill="#2C70DD" />
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+                <rect width="32" height="32" rx="6" fill="#0B1220" />
                 <path
                   d="M8 23V9h2.5l5.5 8 5.5-8H24v14h-2.5v-9.5L16 21l-5.5-7.5V23H8z"
                   fill="#fff"
                 />
               </svg>
-              <span className="text-[18px] font-extrabold text-white">
+              <span className="text-[15px] font-semibold tracking-tight text-ink">
                 MindMed
               </span>
             </div>
-            <p className="mt-4 text-[14px] leading-[1.65] max-w-[280px]">
-              Inteligência clínica para médicos brasileiros. IA, telemedicina e
-              documentação automática em uma só plataforma.
+            <p className="mt-5 text-[14px] leading-[1.65] text-muted-foreground max-w-[320px]">
+              Infraestrutura de inteligência clínica para o sistema de saúde
+              brasileiro. Documentação, decisão e governança em uma camada
+              única e auditável.
             </p>
+            <div className="mt-6 font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
+              mindmedcontato@gmail.com
+            </div>
           </div>
 
-          {cols.map((c) => (
-            <div key={c.title}>
-              <div className="text-white text-[14px] font-bold mb-4">
-                {c.title}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+            {cols.map((c) => (
+              <div key={c.title}>
+                <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground mb-4">
+                  {c.title}
+                </div>
+                <ul className="space-y-2.5">
+                  {c.links.map((l) => (
+                    <li key={l}>
+                      <a
+                        href="#"
+                        className="text-[14px] text-ink/80 hover:text-ink transition-colors"
+                      >
+                        {l}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-2.5">
-                {c.links.map((l) => (
-                  <li key={l}>
-                    <a
-                      href="#"
-                      className="text-[14px] hover:text-white/80 transition-colors"
-                    >
-                      {l}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        <div
-          className="mt-14 pt-7 flex flex-wrap items-center justify-between gap-4 text-[13px]"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
-        >
-          <div>© 2025 MindMed. Todos os direitos reservados.</div>
-          <div className="flex gap-5">
-            <a href="#" className="hover:text-white/80">
-              Política de Privacidade
-            </a>
-            <a href="#" className="hover:text-white/80">
-              Termos de Uso
-            </a>
+        <div className="mt-20 pt-7 border-t border-border flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] tracking-[0.12em] uppercase text-muted-foreground">
+          <div>© 2026 MindMed Tecnologia em Saúde Ltda.</div>
+          <div className="flex gap-6">
+            <span>CNPJ sob registro institucional</span>
+            <span>Brasil · LGPD compliant</span>
           </div>
         </div>
       </div>

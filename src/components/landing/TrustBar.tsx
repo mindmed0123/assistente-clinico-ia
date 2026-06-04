@@ -1,27 +1,26 @@
-import { Stethoscope, ShieldCheck, BadgeCheck, Lock } from "lucide-react";
-
-const items = [
-  { name: "SBACV", icon: <Stethoscope size={16} /> },
-  { name: "LGPD", icon: <ShieldCheck size={16} /> },
-  { name: "CFM 2.314/2022", icon: <BadgeCheck size={16} /> },
-  { name: "Criptografia ponta a ponta", icon: <Lock size={16} /> },
+const institutions = [
+  "SBACV",
+  "REDE INSTITUCIONAL",
+  "HOSPITAIS PARCEIROS",
+  "SOCIEDADES MÉDICAS",
+  "OPERADORAS",
+  "CLÍNICAS DE REFERÊNCIA",
 ];
 
 export function TrustBar() {
   return (
-    <section className="bg-white border-b border-border py-6">
-      <div className="container-inner flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
-        <span className="text-[12px] font-bold uppercase tracking-[1px] text-muted-foreground">
-          Confiança e conformidade
-        </span>
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
-          {items.map((p) => (
+    <section className="bg-white border-y border-border py-10">
+      <div className="container-inner">
+        <div className="text-center eyebrow justify-center flex mb-7">
+          Em uso e em avaliação por
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-5 items-center">
+          {institutions.map((name) => (
             <div
-              key={p.name}
-              className="flex items-center gap-2 text-[14px] font-bold text-foreground/60"
+              key={name}
+              className="text-center font-mono text-[11px] tracking-[0.18em] text-muted-foreground/80"
             >
-              {p.icon}
-              {p.name}
+              {name}
             </div>
           ))}
         </div>

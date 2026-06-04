@@ -1,101 +1,103 @@
-import { Volume2, Lock, Building2, CheckCircle2, ShieldCheck, ClipboardCheck } from "lucide-react";
+const pillars = [
+  {
+    code: "01",
+    title: "Residência de dados no Brasil",
+    body: "Toda a operação ocorre em infraestrutura nacional, sob jurisdição da LGPD, com replicação multi-região e plano de continuidade institucional.",
+  },
+  {
+    code: "02",
+    title: "Criptografia ponta a ponta",
+    body: "AES-256 em repouso, TLS 1.3 em trânsito, gestão de chaves segregada e rotação periódica auditável.",
+  },
+  {
+    code: "03",
+    title: "Trilha de auditoria completa",
+    body: "Registro imutável de cada acesso, transcrição, geração documental e consulta à camada de inteligência clínica.",
+  },
+  {
+    code: "04",
+    title: "Controle de acesso institucional",
+    body: "Identidade federada, SSO corporativo, perfis por papel clínico e segregação rigorosa entre instituições contratantes.",
+  },
+  {
+    code: "05",
+    title: "Conformidade regulatória",
+    body: "Aderência a LGPD, Resolução CFM 2.314/2022 e diretrizes ANS. Pronta para HIPAA e ISO 27001 em operações internacionais.",
+  },
+  {
+    code: "06",
+    title: "Descarte automático de mídia",
+    body: "Áudios e mídias clínicas são descartados após o processamento. Nenhum arquivo bruto é retido fora da janela operacional.",
+  },
+];
 
-const items = [
-  {
-    icon: <Volume2 size={26} />,
-    title: "Áudios descartados automaticamente",
-    desc: "Nenhum arquivo de áudio das suas consultas fica armazenado. A transcrição ocorre em tempo real e o áudio é eliminado imediatamente.",
-  },
-  {
-    icon: <Lock size={26} />,
-    title: "Dados anonimizados e criptografados",
-    desc: "Todas as informações clínicas são anonimizadas e criptografadas com AES-256. Em conformidade total com a LGPD e as resoluções do CFM.",
-  },
-  {
-    icon: <Building2 size={26} />,
-    title: "Dados exclusivamente na MindMed",
-    desc: "Nenhum dado clínico transita por aplicações de terceiros. O processamento ocorre em infraestrutura própria, controlada e auditada.",
-  },
-  {
-    icon: <CheckCircle2 size={26} />,
-    title: "Sem autorização do paciente necessária",
-    desc: "O uso da MindMed não requer consentimento formal adicional do paciente, enquadrado como ferramenta de apoio clínico ao médico.",
-  },
-  {
-    icon: <ShieldCheck size={26} />,
-    title: "Infraestrutura de nível hospitalar",
-    desc: "Servidores com uptime 99,9%, backups automatizados e logs de auditoria completos para cada ação.",
-  },
-  {
-    icon: <ClipboardCheck size={26} />,
-    title: "Conformidade CFM & CRM",
-    desc: "Desenvolvida em conformidade com as resoluções do Conselho Federal de Medicina, incluindo normas de telemedicina.",
-  },
+const compliances = [
+  "LGPD",
+  "CFM 2.314/2022",
+  "ISO 27001 (em adequação)",
+  "HIPAA Ready",
+  "ANS",
+  "TLS 1.3 · AES-256",
 ];
 
 export function Security() {
   return (
     <section
-      id="seguranca"
-      className="py-[100px]"
+      id="governanca"
+      className="py-[120px]"
       style={{ background: "var(--surface)" }}
     >
       <div className="container-inner">
-        <div className="text-center max-w-[720px] mx-auto mb-14">
-          <span className="section-label">Segurança</span>
-          <h2 className="h2 mt-4">Proteção em padrão clínico. Zero concessões.</h2>
-          <p className="mt-4 text-[17px] text-muted-foreground leading-[1.65]">
-            Dados de pacientes exigem o mais alto nível de proteção. A MindMed
-            foi construída com segurança no núcleo.
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16">
+          <div>
+            <div className="eyebrow">Segurança e governança</div>
+            <h2 className="h2 mt-5 text-ink">
+              Construída sob padrão institucional, desde o primeiro byte.
+            </h2>
+          </div>
+          <p className="lede max-w-[560px] lg:pt-12">
+            A governança de dados clínicos é tratada como requisito estrutural,
+            não como camada complementar. Toda decisão de arquitetura é tomada
+            com responsabilidade regulatória e auditabilidade no centro.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {items.map((i) => (
-            <div
-              key={i.title}
-              className="bg-white rounded-[20px] p-8 border border-border transition-all hover:border-[color:var(--primary-mid)]"
-              style={{ transition: "all .25s ease" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.boxShadow = "var(--shadow-card)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.boxShadow = "none")
-              }
-            >
-              <div className="icon-box" style={{ color: "var(--primary)" }}>
-                {i.icon}
-              </div>
-              <h3 className="mt-5 text-[18px] font-bold leading-snug">
-                {i.title}
-              </h3>
-              <p className="mt-3 text-[14px] text-muted-foreground leading-[1.65]">
-                {i.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-14 pt-10 border-t border-border text-center">
-          <div className="text-[13px] font-bold uppercase tracking-[1px] text-muted-foreground mb-5">
-            Certificações e compliance
-          </div>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              "🛡️ LGPD Compliant",
-              "🏥 CFM Res. 2.314/2022",
-              "🔒 ISO 27001",
-              "✅ HIPAA Ready",
-            ].map((t) => (
-              <span
-                key={t}
-                className="px-4 py-2 rounded-full text-[13px] font-semibold bg-white"
-                style={{ border: "1.5px solid #CBD5E1" }}
+        <div className="mt-16 bg-white border border-border rounded-2xl overflow-hidden">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3">
+            {pillars.map((p, i) => (
+              <div
+                key={p.code}
+                className="p-9"
+                style={{
+                  borderBottom:
+                    i < pillars.length - (pillars.length % 3 === 0 ? 3 : pillars.length % 3)
+                      ? "1px solid var(--border)"
+                      : "none",
+                  borderRight:
+                    (i + 1) % 3 !== 0 ? "1px solid var(--border)" : "none",
+                }}
               >
-                {t}
-              </span>
+                <div className="font-mono text-[11px] tracking-[0.14em] text-muted-foreground">
+                  {p.code}
+                </div>
+                <h3 className="h3 mt-3 text-ink">{p.title}</h3>
+                <p className="mt-3 text-[14.5px] leading-[1.65] text-muted-foreground">
+                  {p.body}
+                </p>
+              </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-10 flex flex-wrap gap-2.5">
+          {compliances.map((c) => (
+            <span
+              key={c}
+              className="font-mono text-[11px] tracking-[0.12em] uppercase px-3 py-1.5 rounded-md bg-white border border-border text-ink-3"
+            >
+              {c}
+            </span>
+          ))}
         </div>
       </div>
     </section>
