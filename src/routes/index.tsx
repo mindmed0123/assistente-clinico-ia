@@ -11,6 +11,7 @@ import { Security } from "@/components/landing/Security";
 import { Scale } from "@/components/landing/Scale";
 import { UseCases } from "@/components/landing/UseCases";
 import { Institutions } from "@/components/landing/Institutions";
+import { Pricing } from "@/components/landing/Pricing";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 
@@ -50,6 +51,7 @@ function Index() {
       <Scale />
       <UseCases />
       <Institutions />
+      <Pricing />
       <FinalCTA />
       <Footer />
     </main>

@@ -20,7 +20,7 @@ const links = [
   { href: "#ecossistema", label: "Ecossistema" },
   { href: "#governanca", label: "Governança" },
   { href: "#casos", label: "Casos de uso" },
-  { href: "#instituicoes", label: "Instituições" },
+  { href: "#planos", label: "Planos" },
 ];
 
 export function Navbar() {
