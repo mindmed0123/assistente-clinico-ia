@@ -29,7 +29,7 @@ export function Platform() {
   return (
     <section
       id="plataforma"
-      className="py-[120px]"
+      className="py-[72px] md:py-[120px]"
       style={{ background: "var(--surface)" }}
     >
       <div className="container-inner">
@@ -46,7 +46,7 @@ export function Platform() {
         </div>
 
         <div
-          className="mt-16 bg-white border border-border rounded-2xl overflow-hidden"
+          className="mt-10 md:mt-16 bg-white border border-border rounded-2xl overflow-hidden"
           style={{ boxShadow: "0 20px 60px -30px rgba(44,112,221,0.20)" }}
         >
           {layers.map((l, i) => (

@@ -14,7 +14,7 @@ export function Institutions() {
   return (
     <section
       id="instituicoes"
-      className="py-[120px]"
+      className="py-[72px] md:py-[120px]"
       style={{ background: "var(--surface)" }}
     >
       <div className="container-inner">

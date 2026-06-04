@@ -150,7 +150,7 @@ export function SocialProof() {
   return (
     <section
       id="prova-social"
-      className="py-[110px]"
+      className="py-[64px] md:py-[110px]"
       style={{
         background:
           "linear-gradient(180deg, #FFFFFF 0%, var(--surface) 100%)",

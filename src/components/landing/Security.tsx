@@ -44,11 +44,11 @@ export function Security() {
   return (
     <section
       id="governanca"
-      className="py-[120px]"
+      className="py-[72px] md:py-[120px]"
       style={{ background: "var(--surface)" }}
     >
       <div className="container-inner">
-        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16">
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 md:gap-16">
           <div>
             <div className="eyebrow">Segurança e governança</div>
             <h2 className="h2 mt-5 text-ink">
@@ -62,7 +62,7 @@ export function Security() {
           </p>
         </div>
 
-        <div className="mt-16 bg-white border border-border rounded-2xl overflow-hidden">
+        <div className="mt-10 md:mt-16 bg-white border border-border rounded-2xl overflow-hidden">
           <div className="grid md:grid-cols-2 lg:grid-cols-3">
             {pillars.map((p, i) => (
               <div

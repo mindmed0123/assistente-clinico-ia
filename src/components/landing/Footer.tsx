@@ -23,7 +23,7 @@ export function Footer() {
   return (
     <footer className="bg-white border-t border-border pt-20 pb-10">
       <div className="container-inner">
-        <div className="grid lg:grid-cols-[1.4fr_2.6fr] gap-16">
+        <div className="grid lg:grid-cols-[1.4fr_2.6fr] gap-10 md:gap-16">
           <div>
             <div className="flex items-center gap-2.5">
               <img src={mindmedLogo.url} alt="MindMed" className="h-7 w-7 object-contain" />

@@ -27,8 +27,8 @@ const metrics = [
 
 export function Science() {
   return (
-    <section id="ciencia" className="bg-white py-[100px]">
-      <div className="container-inner grid lg:grid-cols-[1fr_1.2fr] gap-16 items-center">
+    <section id="ciencia" className="bg-white py-[64px] md:py-[100px]">
+      <div className="container-inner grid lg:grid-cols-[1fr_1.2fr] gap-10 md:gap-16 items-center">
         <div>
           <span className="section-label">Ciência & Precisão</span>
           <h2 className="h2 mt-4">
