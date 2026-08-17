@@ -22,7 +22,7 @@ export function HeaderMedicos() {
         <CtaButton
           path="/medicos/teste-gratis"
           plan="mindmed_pro"
-          className="btn-primary text-[13px] px-4 py-2.5"
+          className="btn-primary shrink-0 text-[13px] px-4 min-h-[44px] py-0"
         >
           <span className="hidden sm:inline">{CTA_LABEL}</span>
           <span className="sm:hidden">Testar 7 dias</span>
