@@ -15,6 +15,7 @@ import { ParceriaSBACV } from "@/components/medicos/ParceriaSBACV";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTAMedicos } from "@/components/medicos/FinalCTAMedicos";
 import { FooterMedicos } from "@/components/medicos/FooterMedicos";
+import { StickyCtaMedicos } from "@/components/medicos/StickyCtaMedicos";
 
 const TITLE = "Documentação clínica por IA para médicos | MindMed";
 const DESC =
@@ -47,7 +48,7 @@ function MedicosPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground pb-[124px] md:pb-0">
       <HeaderMedicos />
       <HeroMedicos />
       <ProvaSocialMedicos />
@@ -62,6 +63,7 @@ function MedicosPage() {
       <FAQ />
       <FinalCTAMedicos />
       <FooterMedicos />
+      <StickyCtaMedicos />
     </main>
   );
 }

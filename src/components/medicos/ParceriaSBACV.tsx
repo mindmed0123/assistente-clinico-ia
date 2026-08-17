@@ -8,14 +8,14 @@ export function ParceriaSBACV() {
           <div>
             <div className="eyebrow-muted">Parceria oficial · desde maio de 2026</div>
             <div
-              className="mt-6 rounded-2xl bg-white flex items-center justify-center px-8 py-10"
+              className="mt-5 md:mt-6 rounded-2xl bg-white flex items-center justify-center px-5 py-6 md:px-8 md:py-10"
               style={{ border: "1px solid var(--border)" }}
             >
               <img
                 src={sbacvLogo.url}
                 alt="SBACV — Sociedade Brasileira de Angiologia e de Cirurgia Vascular"
                 loading="lazy"
-                className="w-full max-w-[300px] h-auto object-contain"
+                className="w-full max-w-[220px] md:max-w-[300px] h-auto object-contain"
               />
             </div>
           </div>

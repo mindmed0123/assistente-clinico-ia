@@ -63,7 +63,7 @@ export function PricingMedicos() {
             return (
               <div
                 key={p.code}
-                className="relative rounded-2xl p-6 md:p-8 flex flex-col"
+                className="relative rounded-2xl p-5 pt-7 md:p-8 flex flex-col"
                 style={{
                   background: hi ? "var(--ink)" : "#fff",
                   border: hi ? "1px solid var(--ink)" : "1px solid var(--border)",
@@ -131,7 +131,7 @@ export function PricingMedicos() {
                   <CtaButton
                     path="/medicos/teste-gratis"
                     plan={p.appPlan}
-                    className={hi ? "btn-primary" : "btn-outline"}
+                    className={`${hi ? "btn-primary" : "btn-outline"} min-h-[52px] text-[15px]`}
                     style={{ width: "100%" }}
                   >
                     {CTA_LABEL}
