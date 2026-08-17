@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import mindmedLogo from "@/assets/mindmed-logo.png.asset.json";
+import { CtaButton } from "@/components/CtaButton";
 
 const Logo = () => (
   <a href="#top" className="flex items-center gap-2">
@@ -53,9 +54,9 @@ export function Navbar() {
           <a href="mailto:mindmedcontato@gmail.com" className="btn-ghost hidden sm:inline-flex">
             Contato comercial
           </a>
-          <a href="https://acesso.mindmed.online" className="btn-primary">
+          <CtaButton path="/" className="btn-primary">
             Acessar plataforma
-          </a>
+          </CtaButton>
         </div>
       </div>
     </nav>

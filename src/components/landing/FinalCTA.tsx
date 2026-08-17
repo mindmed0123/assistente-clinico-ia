@@ -1,3 +1,5 @@
+import { CtaButton } from "@/components/CtaButton";
+
 export function FinalCTA() {
   return (
     <section className="py-[64px] md:py-[140px]" style={{ background: "var(--ink)" }}>
@@ -47,9 +49,9 @@ export function FinalCTA() {
             >
               Solicitar apresentação institucional
             </a>
-            <a href="https://acesso.mindmed.online" className="btn-outline-dark">
+            <CtaButton path="/" className="btn-outline-dark">
               Acessar a plataforma
-            </a>
+            </CtaButton>
             <div
               className="mt-6 font-mono text-[11px] tracking-[0.12em] uppercase"
               style={{ color: "rgba(255,255,255,0.4)" }}
