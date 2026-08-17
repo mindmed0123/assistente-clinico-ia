@@ -25,17 +25,19 @@ export function CtaButton({
   children,
 }: CtaButtonProps) {
   const query = { ...(plan ? { plan } : {}), ...(extra ?? {}) };
-  // SSR/primeiro render sem atribuição (localStorage só existe no cliente).
-  const [href, setHref] = useState(() => buildAppUrl(path, query));
+  const extraKey = JSON.stringify(extra ?? {});
+  // O primeiro render (SSR + hidratação) não pode ler localStorage:
+  // a atribuição é aplicada logo após a montagem.
+  const [href, setHref] = useState<string | null>(null);
 
   useEffect(() => {
     setHref(buildAppUrl(path, query));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [path, plan, JSON.stringify(extra ?? {})]);
+  }, [path, plan, extraKey]);
 
   return (
     <a
-      href={href}
+      href={href ?? `https://acesso.mindmed.online${path}`}
       className={className}
       style={style}
       onClick={(e) => {
