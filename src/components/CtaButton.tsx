@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import { buildAppUrl } from "@/lib/appLink";
 import { trackInitiateCheckout } from "@/lib/pixel";
@@ -24,10 +25,17 @@ export function CtaButton({
   children,
 }: CtaButtonProps) {
   const query = { ...(plan ? { plan } : {}), ...(extra ?? {}) };
+  // SSR/primeiro render sem atribuição (localStorage só existe no cliente).
+  const [href, setHref] = useState(() => buildAppUrl(path, query));
+
+  useEffect(() => {
+    setHref(buildAppUrl(path, query));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [path, plan, JSON.stringify(extra ?? {})]);
 
   return (
     <a
-      href={buildAppUrl(path, query)}
+      href={href}
       className={className}
       style={style}
       onClick={(e) => {
