@@ -12,10 +12,11 @@ export function ProvaSocialMedicos() {
           {items.map((t, i) => (
             <div
               key={t}
-              className="font-mono text-[11px] md:text-[12px] tracking-[0.12em] uppercase text-ink-3 py-2.5 sm:py-0"
-              style={{ borderTop: i === 0 ? undefined : "1px solid var(--border)" }}
+              className={`font-mono text-[11px] md:text-[12px] tracking-[0.12em] uppercase text-ink-3 py-2.5 sm:py-0 ${
+                i === 0 ? "" : "border-t border-border sm:border-t-0"
+              }`}
             >
-              <span className="sm:border-0">{t}</span>
+              {t}
             </div>
           ))}
         </div>
