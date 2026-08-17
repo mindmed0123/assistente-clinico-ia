@@ -15,6 +15,7 @@ import { ParceriaSBACV } from "@/components/medicos/ParceriaSBACV";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTAMedicos } from "@/components/medicos/FinalCTAMedicos";
 import { FooterMedicos } from "@/components/medicos/FooterMedicos";
+import { StickyCtaMedicos } from "@/components/medicos/StickyCtaMedicos";
 
 const TITLE = "Documentação clínica por IA para médicos | MindMed";
 const DESC =
