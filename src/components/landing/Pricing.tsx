@@ -292,22 +292,33 @@ export function Pricing() {
                 </ul>
 
                 {/* CTA */}
-                <a
-                  href={p.ctaHref}
-                  className={hi ? "btn-primary mt-8 w-full" : "btn-outline mt-8 w-full"}
-                  style={
-                    hi
-                      ? {
-                          background: "#fff",
-                          color: "var(--primary-dark)",
-                          borderColor: "#fff",
-                          boxShadow: "0 8px 24px rgba(255,255,255,0.18)",
-                        }
-                      : undefined
-                  }
-                >
-                  {p.cta}
-                </a>
+                {(() => {
+                  const cls = hi
+                    ? "btn-primary mt-8 w-full"
+                    : "btn-outline mt-8 w-full";
+                  const st = hi
+                    ? {
+                        background: "#fff",
+                        color: "var(--primary-dark)",
+                        borderColor: "#fff",
+                        boxShadow: "0 8px 24px rgba(255,255,255,0.18)",
+                      }
+                    : undefined;
+                  return "appPlan" in p && p.appPlan ? (
+                    <CtaButton
+                      path="/medicos/teste-gratis"
+                      plan={p.appPlan}
+                      className={cls}
+                      style={st}
+                    >
+                      {p.cta}
+                    </CtaButton>
+                  ) : (
+                    <a href={p.externalHref} className={cls} style={st}>
+                      {p.cta}
+                    </a>
+                  );
+                })()}
 
                 <div
                   className="mt-4 flex items-center justify-center gap-2 text-[12px]"

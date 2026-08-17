@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { trackViewContent } from "@/lib/pixel";
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { TrustBar } from "@/components/landing/TrustBar";
