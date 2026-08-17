@@ -52,7 +52,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   useEffect(() => {
-    trackViewContent("landing_medicos");
+    trackViewContent("institucional");
   }, []);
 
   return (
