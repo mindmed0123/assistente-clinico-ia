@@ -63,6 +63,7 @@ function MedicosPage() {
       <FAQ />
       <FinalCTAMedicos />
       <FooterMedicos />
+      <StickyCtaMedicos />
     </main>
   );
 }
