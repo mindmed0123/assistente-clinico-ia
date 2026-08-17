@@ -83,7 +83,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 const META_PIXEL_ID = "1609890377100542";
-const GA4_ID = import.meta.env["VITE_GA4_MEASUREMENT_ID"] as string | undefined;
+const GA4_ID = "G-BPPM1PFH3Y";
 const LINKEDIN_PARTNER_ID = import.meta.env["VITE_LINKEDIN_PARTNER_ID"] as
   | string
   | undefined;
