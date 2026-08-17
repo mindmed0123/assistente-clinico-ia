@@ -40,7 +40,7 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="py-[48px] md:py-[100px]" style={{ background: "var(--surface)" }}>
+    <section className="py-[48px] md:py-[100px] bg-white">
       <div className="container-inner max-w-[760px] mx-auto">
         <div className="text-center mb-10 md:mb-12">
           <span className="eyebrow">Perguntas frequentes</span>

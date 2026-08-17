@@ -36,7 +36,7 @@ const items = [
 /** Seção "O que a MindMed escreve" — usada na /medicos. */
 export function Features() {
   return (
-    <section className="py-[56px] md:py-[120px]" style={{ background: "var(--surface)" }}>
+    <section className="py-[56px] md:py-[120px] bg-white">
       <div className="container-inner">
         <div className="max-w-[760px]">
           <div className="eyebrow">O que a MindMed escreve</div>

@@ -16,7 +16,7 @@ const rows = [
 
 export function CustoMedicos() {
   return (
-    <section className="py-[56px] md:py-[120px]" style={{ background: "var(--surface)" }}>
+    <section className="py-[56px] md:py-[120px] bg-white">
       <div className="container-inner">
         <div className="max-w-[760px]">
           <div className="eyebrow">Custo</div>

@@ -4,7 +4,7 @@
  */
 export function VideoDemoMedicos() {
   return (
-    <section className="py-[48px] md:py-[110px]" style={{ background: "var(--surface)" }}>
+    <section className="py-[48px] md:py-[110px] bg-white">
       <div className="container-inner">
         <div className="max-w-[760px]">
           <div className="eyebrow">Demonstração</div>

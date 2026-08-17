@@ -2,7 +2,7 @@ import sbacvLogo from "@/assets/sbacv-logo.jpg.asset.json";
 
 export function ParceriaSBACV() {
   return (
-    <section className="py-[56px] md:py-[110px]" style={{ background: "var(--surface)" }}>
+    <section className="py-[56px] md:py-[110px] bg-white">
       <div className="container-inner">
         <div className="grid lg:grid-cols-[0.9fr_1.3fr] gap-10 md:gap-16 items-center">
           <div>
