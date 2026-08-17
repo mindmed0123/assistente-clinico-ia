@@ -1,3 +1,5 @@
+import sbacvLogo from "@/assets/sbacv-logo.jpg.asset.json";
+
 export function ParceriaSBACV() {
   return (
     <section className="py-[56px] md:py-[110px]" style={{ background: "var(--surface)" }}>
@@ -6,25 +8,18 @@ export function ParceriaSBACV() {
           <div>
             <div className="eyebrow-muted">Parceria oficial · desde maio de 2026</div>
             <div
-              className="mt-6 rounded-2xl bg-white flex flex-col items-center justify-center px-8 py-14"
+              className="mt-6 rounded-2xl bg-white flex items-center justify-center px-8 py-10"
               style={{ border: "1px solid var(--border)" }}
             >
-              <span
-                className="text-ink"
-                style={{
-                  fontSize: "clamp(40px, 7vw, 64px)",
-                  fontWeight: 600,
-                  letterSpacing: "0.02em",
-                  lineHeight: 1,
-                }}
-              >
-                SBACV
-              </span>
-              <span className="mt-4 text-center text-[12px] leading-[1.5] text-muted-foreground max-w-[260px]">
-                Sociedade Brasileira de Angiologia e de Cirurgia Vascular
-              </span>
+              <img
+                src={sbacvLogo.url}
+                alt="SBACV — Sociedade Brasileira de Angiologia e de Cirurgia Vascular"
+                loading="lazy"
+                className="w-full max-w-[300px] h-auto object-contain"
+              />
             </div>
           </div>
+
 
           <div>
             <h2 className="h2 text-ink">
