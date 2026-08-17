@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CtaButton } from "@/components/CtaButton";
 import { Check, ShieldCheck, ChevronDown } from "lucide-react";
 
 const plans = [
@@ -17,7 +18,7 @@ const plans = [
       "Exportação para qualquer prontuário",
     ],
     cta: "Começar agora",
-    ctaHref: "https://checkout.stripe.com/c/pay/cs_live_b1OwWZXIg9T0EZSraPPaAHRqi82owLlkyTWswZF5wZnbbvPis7AgmTdSrm#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSdicGRmZGhqaWBTZHdsZGtxJz8nZmprcXdqaScpJ2R1bE5gfCc%2FJ3VuWmlsc2BaMDRWMjNjPVd1aEZpa0NXX2o3f0l8az1oYn9Ecm5%2Fcld9TD1LVEtHVnExclRBX099MGN0NXRfdVZPcE1jTURuZn9jakc1XX8yZjBSR2RdVndAPVFcXXVMZzI1NW5GdDNJfE5WJyknY3dqaFZgd3Ngdyc%2FcXdwYCknZ2RmbmJ3anBrYUZqaWp3Jz8nJmNjY2NjYycpJ2lkfGpwcVF8dWAnPydocGlxbFpscWBoJyknYGtkZ2lgVWlkZmBtamlhYHd2Jz9xd3BgeCUl",
+    appPlan: "mindmed_starter",
     highlighted: false,
   },
   {
@@ -37,7 +38,7 @@ const plans = [
       "Relatórios e estatísticas",
     ],
     cta: "Começar teste gratuito",
-    ctaHref: "https://checkout.stripe.com/c/pay/cs_live_b1IHxcw1WuzrCHcFNAG5VHsHe4s8jtjc8huizkhMhS9uaeKHp43C5MwGOZ#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSdicGRmZGhqaWBTZHdsZGtxJz8nZmprcXdqaScpJ2R1bE5gfCc%2FJ3VuWmlsc2BaMDRWMjNjPVd1aEZpa0NXX2o3f0l8az1oYn9Ecm5%2Fcld9TD1LVEtHVnExclRBX099MGN0NXRfdVZPcE1jTURuZn9jakc1XX8yZjBSR2RdVndAPVFcXXVMZzI1NW5GdDNJfE5WJyknY3dqaFZgd3Ngdyc%2FcXdwYCknZ2RmbmJ3anBrYUZqaWp3Jz8nJmNjY2NjYycpJ2lkfGpwcVF8dWAnPydocGlxbFpscWBoJyknYGtkZ2lgVWlkZmBtamlhYHd2Jz9xd3BgeCUl",
+    appPlan: "mindmed_pro",
     highlighted: true,
   },
   {
@@ -57,7 +58,7 @@ const plans = [
       "SLA e ambiente dedicado",
     ],
     cta: "Falar com vendas",
-    ctaHref: "https://api.whatsapp.com/message/WXQ5BR35WQUJA1?autoload=1&app_absent=0",
+    externalHref: "https://api.whatsapp.com/message/WXQ5BR35WQUJA1?autoload=1&app_absent=0",
     highlighted: false,
   },
 ];
@@ -291,22 +292,33 @@ export function Pricing() {
                 </ul>
 
                 {/* CTA */}
-                <a
-                  href={p.ctaHref}
-                  className={hi ? "btn-primary mt-8 w-full" : "btn-outline mt-8 w-full"}
-                  style={
-                    hi
-                      ? {
-                          background: "#fff",
-                          color: "var(--primary-dark)",
-                          borderColor: "#fff",
-                          boxShadow: "0 8px 24px rgba(255,255,255,0.18)",
-                        }
-                      : undefined
-                  }
-                >
-                  {p.cta}
-                </a>
+                {(() => {
+                  const cls = hi
+                    ? "btn-primary mt-8 w-full"
+                    : "btn-outline mt-8 w-full";
+                  const st = hi
+                    ? {
+                        background: "#fff",
+                        color: "var(--primary-dark)",
+                        borderColor: "#fff",
+                        boxShadow: "0 8px 24px rgba(255,255,255,0.18)",
+                      }
+                    : undefined;
+                  return "appPlan" in p && p.appPlan ? (
+                    <CtaButton
+                      path="/medicos/teste-gratis"
+                      plan={p.appPlan}
+                      className={cls}
+                      style={st}
+                    >
+                      {p.cta}
+                    </CtaButton>
+                  ) : (
+                    <a href={p.externalHref} className={cls} style={st}>
+                      {p.cta}
+                    </a>
+                  );
+                })()}
 
                 <div
                   className="mt-4 flex items-center justify-center gap-2 text-[12px]"

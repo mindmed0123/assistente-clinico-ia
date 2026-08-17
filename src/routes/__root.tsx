@@ -8,7 +8,13 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import { captureAttribution } from "@/lib/attribution";
 import appCss from "../styles.css?url";
+
+// Captura a atribuição no boot do cliente, antes de qualquer render de CTA.
+if (typeof window !== "undefined") {
+  captureAttribution();
+}
 
 function NotFoundComponent() {
   return (
@@ -67,31 +73,50 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const META_PIXEL_ID = "1609890377100542";
+const GA4_ID = import.meta.env["VITE_GA4_MEASUREMENT_ID"] as string | undefined;
+const LINKEDIN_PARTNER_ID = import.meta.env["VITE_LINKEDIN_PARTNER_ID"] as
+  | string
+  | undefined;
+
+const metaPixelScript = `!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`;
+
+const ga4Script = `window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config','${GA4_ID}');`;
+
+const linkedinScript = `_linkedin_partner_id="${LINKEDIN_PARTNER_ID}";
+window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+(function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}
+var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");
+b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b,s);})(window.lintrk);`;
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MindMed — Inteligência Clínica para Médicos" },
+      { title: "MindMed — Infraestrutura de Inteligência Clínica" },
       {
         name: "description",
         content:
-          "IA clínica com raciocínio médico real, telemedicina integrada e documentação automática. Avicena, seu assistente clínico com IA.",
+          "A infraestrutura de inteligência clínica para a medicina moderna: documentação, decisão clínica e governança de dados em uma plataforma auditável.",
       },
-      { property: "og:title", content: "MindMed — Inteligência Clínica para Médicos" },
-      {
-        property: "og:description",
-        content:
-          "IA clínica com raciocínio médico real, telemedicina integrada e documentação automática.",
-      },
+      { property: "og:site_name", content: "MindMed" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "MindMed — Inteligência Clínica para Médicos" },
-      { name: "description", content: "MindMed is an AI clinical platform for Brazilian doctors, offering real-time medical reasoning, integrated telemedicine, and automated documentation." },
-      { property: "og:description", content: "MindMed is an AI clinical platform for Brazilian doctors, offering real-time medical reasoning, integrated telemedicine, and automated documentation." },
-      { name: "twitter:description", content: "MindMed is an AI clinical platform for Brazilian doctors, offering real-time medical reasoning, integrated telemedicine, and automated documentation." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/iiiViKpKu9fWtIhiSfMR2Lxe6OV2/social-images/social-1780544265108-Banner_MindMed_560_x_460.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/iiiViKpKu9fWtIhiSfMR2Lxe6OV2/social-images/social-1780544265108-Banner_MindMed_560_x_460.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -102,6 +127,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap",
       },
     ],
+    scripts: [
+      { children: metaPixelScript },
+      ...(GA4_ID
+        ? [
+            {
+              src: `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`,
+              async: true,
+            },
+            { children: ga4Script },
+          ]
+        : []),
+      ...(LINKEDIN_PARTNER_ID ? [{ children: linkedinScript }] : []),
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -111,11 +149,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
       <body>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
