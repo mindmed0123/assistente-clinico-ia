@@ -1,8 +1,6 @@
-import { Play } from "lucide-react";
-
 /**
- * Demonstração do produto. Enquanto o vídeo final não existe,
- * exibe a tela do produto em loop (não um placeholder cinza).
+ * Demonstração do produto. O vídeo final ainda não existe:
+ * o espaço fica reservado, limpo e vazio, no formato exato do player.
  */
 export function VideoDemoMedicos() {
   return (
@@ -15,36 +13,13 @@ export function VideoDemoMedicos() {
 
         <div className="mt-8 md:mt-12 max-w-[900px]">
           <div
-            className="relative rounded-2xl overflow-hidden aspect-[4/5] sm:aspect-video"
+            aria-hidden
+            className="rounded-2xl aspect-video"
             style={{
               background: "var(--surface-2)",
               border: "1px solid var(--border)",
-              boxShadow:
-                "0 30px 80px -20px rgba(44,112,221,0.22), 0 12px 30px -10px rgba(11,18,32,0.10)",
             }}
-          >
-            <img
-              src="/og-medicos.jpg"
-              alt="Tela da MindMed transformando o áudio da consulta em documento clínico estruturado"
-              loading="lazy"
-              className="absolute inset-0 w-full h-full object-contain p-4"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-0 flex items-center justify-center"
-              style={{ background: "rgba(11,18,32,0.06)" }}
-            >
-              <div
-                className="w-16 h-16 rounded-full flex items-center justify-center"
-                style={{
-                  background: "var(--primary)",
-                  boxShadow: "0 10px 30px rgba(44,112,221,0.40)",
-                }}
-              >
-                <Play size={22} className="text-white ml-0.5" fill="currentColor" />
-              </div>
-            </div>
-          </div>
+          />
 
           <p className="mt-4 text-[14px] text-muted-foreground leading-[1.6]">
             Áudio real de um atendimento virando laudo estruturado, revisado e
@@ -55,3 +30,4 @@ export function VideoDemoMedicos() {
     </section>
   );
 }
+
