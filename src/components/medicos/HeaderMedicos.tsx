@@ -14,10 +14,10 @@ export function HeaderMedicos() {
         borderBottom: "1px solid var(--border)",
       }}
     >
-      <div className="container-inner w-full flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2 select-none">
-          <img src={mindmedLogo.url} alt="MindMed" className="h-7 w-7 object-contain" />
-          <span className="text-[15px] font-semibold tracking-tight text-ink">MindMed</span>
+      <div className="container-inner w-full grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
+        <div className="flex min-w-0 items-center gap-2 select-none">
+          <img src={mindmedLogo.url} alt="MindMed" className="h-7 w-7 shrink-0 object-contain" />
+          <span className="truncate text-[15px] font-semibold tracking-tight text-ink">MindMed</span>
         </div>
         <CtaButton
           path="/medicos/teste-gratis"
