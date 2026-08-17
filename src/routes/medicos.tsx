@@ -48,7 +48,7 @@ function MedicosPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground pb-[92px] md:pb-0">
       <HeaderMedicos />
       <HeroMedicos />
       <ProvaSocialMedicos />
