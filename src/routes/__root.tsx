@@ -84,9 +84,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 const META_PIXEL_ID = "1609890377100542";
 const GA4_ID = "G-BPPM1PFH3Y";
-const LINKEDIN_PARTNER_ID = import.meta.env["VITE_LINKEDIN_PARTNER_ID"] as
-  | string
-  | undefined;
+const LINKEDIN_PARTNER_ID = "9543082";
 
 const metaPixelScript = `!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -170,6 +168,15 @@ function RootShell({ children }: { children: React.ReactNode }) {
             style={{ display: "none" }}
             alt=""
             src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src={`https://px.ads.linkedin.com/collect/?pid=${LINKEDIN_PARTNER_ID}&fmt=gif`}
           />
         </noscript>
         {children}
