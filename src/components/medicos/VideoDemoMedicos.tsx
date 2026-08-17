@@ -15,8 +15,9 @@ export function VideoDemoMedicos() {
 
         <div className="mt-8 md:mt-12 max-w-[900px]">
           <div
-            className="relative rounded-2xl overflow-hidden bg-white aspect-[4/5] sm:aspect-video"
+            className="relative rounded-2xl overflow-hidden aspect-[4/5] sm:aspect-video"
             style={{
+              background: "var(--surface-2)",
               border: "1px solid var(--border)",
               boxShadow:
                 "0 30px 80px -20px rgba(44,112,221,0.22), 0 12px 30px -10px rgba(11,18,32,0.10)",
@@ -26,7 +27,7 @@ export function VideoDemoMedicos() {
               src="/og-medicos.jpg"
               alt="Tela da MindMed transformando o áudio da consulta em documento clínico estruturado"
               loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-contain p-4"
             />
             <div
               aria-hidden
