@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { CtaButton } from "@/components/CtaButton";
 
 import { captureAttribution } from "@/lib/attribution";
 import appCss from "../styles.css?url";
