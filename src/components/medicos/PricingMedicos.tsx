@@ -131,7 +131,7 @@ export function PricingMedicos() {
                   <CtaButton
                     path="/medicos/teste-gratis"
                     plan={p.appPlan}
-                    className={hi ? "btn-primary" : "btn-outline"}
+                    className={`${hi ? "btn-primary" : "btn-outline"} min-h-[52px] text-[15px]`}
                     style={{ width: "100%" }}
                   >
                     {CTA_LABEL}
