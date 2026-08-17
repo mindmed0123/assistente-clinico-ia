@@ -240,7 +240,7 @@ export function Pricing() {
                         : "var(--muted-foreground)",
                     }}
                   >
-                    14 dias grátis · sem cartão de crédito
+                    7 dias de teste · nada é cobrado hoje
                   </div>
                 </div>
 
@@ -329,7 +329,7 @@ export function Pricing() {
                   }}
                 >
                   <ShieldCheck size={13} />
-                  Garantia de 14 dias · cancele a qualquer momento
+                  Garantia de 30 dias · cancele em dois cliques
                 </div>
               </div>
             );
