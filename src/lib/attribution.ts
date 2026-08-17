@@ -37,23 +37,29 @@ export function getAttribution(): Attribution {
   }
 }
 
-/** Lê os parâmetros da URL e persiste (first-touch, 90 dias). */
+/** Lê os parâmetros da URL e persiste (first-touch, 90 dias).
+ *  Só grava quando há dado de campanha — gravar um registro vazio
+ *  "queimaria" a janela de 90 dias e descartaria a atribuição de um
+ *  clique de anúncio posterior. */
 export function captureAttribution(): void {
   if (typeof window === "undefined") return;
   try {
-    const existing = getAttribution();
-    if (isFresh(existing)) return;
-
     const params = new URLSearchParams(window.location.search);
-    const next: Attribution = {
-      mm_lp: window.location.pathname,
-      first_seen_at: new Date().toISOString(),
-    };
+    const found: Attribution = {};
     for (const key of KEYS) {
       const value = params.get(key);
-      if (value) next[key] = value;
+      if (value) found[key] = value.slice(0, 200);
     }
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+
+    // Sem dado de campanha nesta visita: não escreve nada.
+    if (Object.keys(found).length === 0) return;
+
+    // First-touch: um registro válido existente nunca é sobrescrito.
+    if (isFresh(getAttribution())) return;
+
+    found.mm_lp = window.location.pathname;
+    found.first_seen_at = new Date().toISOString();
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(found));
   } catch {
     /* storage bloqueado — segue sem atribuição */
   }
