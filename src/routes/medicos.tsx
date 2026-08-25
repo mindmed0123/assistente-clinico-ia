@@ -8,8 +8,11 @@ import { VideoDemoMedicos } from "@/components/medicos/VideoDemoMedicos";
 import { ComoFuncionaMedicos } from "@/components/medicos/ComoFuncionaMedicos";
 import { Features } from "@/components/landing/Features";
 import { SecurityMedicos } from "@/components/medicos/SecurityMedicos";
+import { ContagemCFM } from "@/components/medicos/ContagemCFM";
 import { CustoMedicos } from "@/components/medicos/CustoMedicos";
+import { FundadoresMedicos } from "@/components/medicos/FundadoresMedicos";
 import { PricingMedicos } from "@/components/medicos/PricingMedicos";
+
 import { TrustBar } from "@/components/landing/TrustBar";
 import { ParceriaSBACV } from "@/components/medicos/ParceriaSBACV";
 import { FAQ } from "@/components/landing/FAQ";
@@ -55,9 +58,12 @@ function MedicosPage() {
       <VideoDemoMedicos />
       <ComoFuncionaMedicos />
       <Features />
+      <ContagemCFM />
       <SecurityMedicos />
       <CustoMedicos />
+      <FundadoresMedicos />
       <PricingMedicos />
+
       <TrustBar />
       <ParceriaSBACV />
       <FAQ />

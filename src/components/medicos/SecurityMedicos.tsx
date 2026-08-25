@@ -36,7 +36,7 @@ export function SecurityMedicos() {
               lineHeight: 1.06,
             }}
           >
-            A resolução do CFM sobre IA já está em vigor.{" "}
+            A resolução do CFM sobre IA entra em vigor em 27 de agosto.{" "}
             <span
               style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 400, color: "var(--primary)" }}
             >
@@ -44,11 +44,13 @@ export function SecurityMedicos() {
             </span>
           </h2>
           <p className="lede mt-6 max-w-[720px]">
-            A Resolução CFM 2.454/2026 estabelece como a inteligência artificial
-            pode ser usada na prática médica. Ela trata de responsabilidade,
-            registro e transparência — e a MindMed foi construída em torno
-            desses três pontos, não adaptada a eles depois.
+            Publicada em fevereiro, a Resolução CFM 2.454/2026 passa a valer em
+            27 de agosto de 2026. Ela estabelece como a inteligência artificial
+            pode ser usada na prática médica — responsabilidade, registro e
+            transparência. A MindMed foi construída em torno desses três pontos,
+            não adaptada a eles depois.
           </p>
+
         </div>
 
         <div className="mt-9 md:mt-14 grid sm:grid-cols-2 gap-4 md:gap-5">
