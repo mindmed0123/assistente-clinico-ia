@@ -31,8 +31,9 @@ const plans = [
       "Suporte prioritário",
     ],
     appPlan: "mindmed_pro",
-    highlighted: true,
-    badge: "Mais escolhido",
+    highlighted: false,
+    badge: null as string | null,
+
   },
   {
     code: "Pro Anual",
