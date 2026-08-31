@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Plataforma institucional para documentação, decisão clínica e governança de dados em saúde — projetada para operações de escala hospitalar.",
+          "Plataforma institucional para documentação, referência clínica e governança de dados em saúde — projetada para operações de escala hospitalar.",
       },
       { property: "og:url", content: "https://mindmed.online/" },
       { property: "og:type", content: "website" },
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Plataforma institucional para documentação, decisão clínica e governança de dados em saúde.",
+          "Plataforma institucional para documentação, referência clínica e governança de dados em saúde.",
       },
       { name: "twitter:image", content: "https://mindmed.online/og-image.jpg" },
     ],
