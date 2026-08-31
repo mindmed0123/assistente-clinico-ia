@@ -103,7 +103,7 @@ export function FundadoresMedicos() {
                 className="mt-3 text-[12px] leading-[1.5]"
                 style={{ color: "rgba(255,255,255,0.55)" }}
               >
-                Restam {restantes} de {TOTAL_VAGAS} vagas
+                {textoVagas}
               </p>
             </div>
           </div>
