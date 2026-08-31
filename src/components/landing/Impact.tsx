@@ -18,7 +18,7 @@ export function Impact() {
           </div>
           <p className="lede max-w-[520px]">
             Resultados observados em operações que adotaram a MindMed como
-            camada de documentação e apoio à decisão clínica.
+            camada de documentação e referência clínica.
           </p>
         </div>
 
