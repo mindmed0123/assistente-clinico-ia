@@ -13,8 +13,8 @@ const products = [
   },
   {
     code: "MM · Avicena",
-    name: "Apoio à Decisão Clínica",
-    desc: "Consulta contextual baseada em evidências, com citação obrigatória de fontes e rastreabilidade integral das respostas.",
+    name: "Referência Clínica",
+    desc: "Consulta contextual à literatura, com citação obrigatória de fontes e rastreabilidade integral das respostas. Material de referência para o médico consultar — não emite diagnóstico, prescrição nem conduta.",
     tag: "Disponível",
   },
   {

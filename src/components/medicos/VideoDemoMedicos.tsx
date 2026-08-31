@@ -1,8 +1,9 @@
-/**
- * Demonstração do produto. O vídeo final ainda não existe:
- * o espaço fica reservado, limpo e vazio, no formato exato do player.
- */
+/** URL do vídeo de demonstração. Enquanto for null, a seção não é renderizada. */
+const VIDEO_URL: string | null = null;
+
 export function VideoDemoMedicos() {
+  if (!VIDEO_URL) return null;
+
   return (
     <section className="py-[48px] md:py-[110px] bg-white">
       <div className="container-inner">
@@ -12,13 +13,11 @@ export function VideoDemoMedicos() {
         </div>
 
         <div className="mt-8 md:mt-12 max-w-[900px]">
-          <div
-            aria-hidden
-            className="rounded-2xl aspect-video"
-            style={{
-              background: "var(--surface-2)",
-              border: "1px solid var(--border)",
-            }}
+          <video
+            className="rounded-2xl w-full aspect-video"
+            src={VIDEO_URL}
+            controls
+            playsInline
           />
 
           <p className="mt-4 text-[14px] text-muted-foreground leading-[1.6]">
@@ -30,4 +29,3 @@ export function VideoDemoMedicos() {
     </section>
   );
 }
-

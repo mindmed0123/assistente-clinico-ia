@@ -18,6 +18,11 @@ export function FundadoresMedicos() {
   const restantes = Math.max(0, TOTAL_VAGAS - VAGAS_OCUPADAS);
   if (restantes === 0) return null;
 
+  const textoVagas =
+    VAGAS_OCUPADAS === 0
+      ? `${TOTAL_VAGAS} vagas abertas`
+      : `Restam ${restantes} de ${TOTAL_VAGAS} vagas`;
+
   return (
     <section className="py-[56px] md:py-[120px] bg-white">
       <div className="container-inner">
