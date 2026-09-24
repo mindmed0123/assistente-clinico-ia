@@ -17,7 +17,7 @@ function textoPara(agora: Date): string {
       day: "2-digit",
     });
     if (fmt.format(agora) === fmt.format(VIGENCIA_CFM)) {
-      return "A Resolução CFM 2.454/2026 entra em vigor hoje.";
+      return "A Resolução CFM 2.454/2026 entrou em vigor hoje.";
     }
     return DEPOIS;
   }
