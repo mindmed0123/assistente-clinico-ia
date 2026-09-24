@@ -36,7 +36,7 @@ export function SecurityMedicos() {
               lineHeight: 1.06,
             }}
           >
-            A resolução do CFM sobre IA entra em vigor em 27 de agosto.{" "}
+            A resolução do CFM sobre IA está em vigor desde 26 de agosto.{" "}
             <span
               style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 400, color: "var(--primary)" }}
             >
@@ -44,8 +44,8 @@ export function SecurityMedicos() {
             </span>
           </h2>
           <p className="lede mt-6 max-w-[720px]">
-            Publicada em fevereiro, a Resolução CFM 2.454/2026 passa a valer em
-            27 de agosto de 2026. Ela estabelece como a inteligência artificial
+            Publicada em fevereiro, a Resolução CFM 2.454/2026 está em vigor
+            desde 26 de agosto de 2026. Ela estabelece como a inteligência artificial
             pode ser usada na prática médica — responsabilidade, registro e
             transparência. A MindMed foi construída em torno desses três pontos,
             não adaptada a eles depois.

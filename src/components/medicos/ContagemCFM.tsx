@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-const VIGENCIA_CFM = new Date("2026-08-27T00:00:00-03:00");
+const VIGENCIA_CFM = new Date("2026-08-26T00:00:00-03:00");
 
 const DEPOIS =
-  "A Resolução CFM 2.454/2026 está em vigor desde 27 de agosto de 2026.";
+  "A Resolução CFM 2.454/2026 está em vigor desde 26 de agosto de 2026.";
 
 function textoPara(agora: Date): string {
   const msDia = 24 * 60 * 60 * 1000;
