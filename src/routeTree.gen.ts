@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MedicosRouteImport } from './routes/medicos'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as KitIndexRouteImport } from './routes/kit/index'
+import { Route as KitObrigadoRouteImport } from './routes/kit/obrigado'
 
 const MedicosRoute = MedicosRouteImport.update({
   id: '/medicos',
@@ -22,31 +24,49 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KitIndexRoute = KitIndexRouteImport.update({
+  id: '/kit/',
+  path: '/kit/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitObrigadoRoute = KitObrigadoRouteImport.update({
+  id: '/kit/obrigado',
+  path: '/kit/obrigado',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/medicos': typeof MedicosRoute
+  '/kit/obrigado': typeof KitObrigadoRoute
+  '/kit/': typeof KitIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/medicos': typeof MedicosRoute
+  '/kit/obrigado': typeof KitObrigadoRoute
+  '/kit': typeof KitIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/medicos': typeof MedicosRoute
+  '/kit/obrigado': typeof KitObrigadoRoute
+  '/kit/': typeof KitIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/medicos'
+  fullPaths: '/' | '/medicos' | '/kit/obrigado' | '/kit/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/medicos'
-  id: '__root__' | '/' | '/medicos'
+  to: '/' | '/medicos' | '/kit/obrigado' | '/kit'
+  id: '__root__' | '/' | '/medicos' | '/kit/obrigado' | '/kit/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   MedicosRoute: typeof MedicosRoute
+  KitObrigadoRoute: typeof KitObrigadoRoute
+  KitIndexRoute: typeof KitIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +85,28 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kit/': {
+      id: '/kit/'
+      path: '/kit'
+      fullPath: '/kit/'
+      preLoaderRoute: typeof KitIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kit/obrigado': {
+      id: '/kit/obrigado'
+      path: '/kit/obrigado'
+      fullPath: '/kit/obrigado'
+      preLoaderRoute: typeof KitObrigadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   MedicosRoute: MedicosRoute,
+  KitObrigadoRoute: KitObrigadoRoute,
+  KitIndexRoute: KitIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

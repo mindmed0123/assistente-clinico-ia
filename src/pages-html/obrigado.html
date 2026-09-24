@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Seu Kit está pronto — MindMed</title>
+
+<!-- ════════════════════════════════════════════════════════════
+     Esta página é o "Redirecionar para o site" do Payment Link.
+     No Stripe: Payment Link → Depois do pagamento → Redirecionar
+     para o seu site → cole a URL desta página.
+     É ela que dispara o evento Purchase no Meta.
+     ════════════════════════════════════════════════════════════ -->
+
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1609890377100542');
+fbq('track','PageView');
+(function(){
+  // dedup simples: se o navegador recarregar a página, não conta duas compras
+  var k = 'mm_kit_purchase';
+  var already = false;
+  try{ already = sessionStorage.getItem(k) === '1'; }catch(e){}
+  if(!already){
+    fbq('track','Purchase',{
+      content_name:'Kit CFM 2454',
+      content_ids:['kit_cfm_2454'],
+      content_type:'product',
+      value:497, currency:'BRL'
+    });
+    try{ sessionStorage.setItem(k,'1'); }catch(e){}
+  }
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1609890377100542&ev=PageView&noscript=1"/></noscript>
+
+<style>
+  :root{--navy:#12304f;--navy-2:#1c4772;--accent:#2e6fa7;--ink:#15202b;--ink-2:#4a5a6a;
+        --line:#dde5ec;--bg-2:#f4f7fa;--ok:#1d7a4d}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#fff;color:var(--ink);
+    font:400 17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:660px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(170deg,#f7fafd,#eef4fa);border-bottom:1px solid var(--line);
+    padding:46px 0 40px;text-align:center}
+  .check{width:56px;height:56px;border-radius:50%;background:#e8f5ee;color:var(--ok);
+    display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700;
+    margin:0 auto 18px}
+  h1{font-size:clamp(25px,5.5vw,33px);line-height:1.22;color:var(--navy);font-weight:800;
+    letter-spacing:-.02em;margin-bottom:12px}
+  .lede{font-size:17.5px;color:var(--ink-2);line-height:1.55}
+  section{padding:38px 0}
+  section + section{border-top:1px solid var(--line)}
+  h2{font-size:22px;color:var(--navy);font-weight:750;margin-bottom:16px;letter-spacing:-.015em}
+  p{margin-bottom:13px}
+  p:last-child{margin-bottom:0}
+  strong{font-weight:680;color:var(--navy)}
+  .files{list-style:none}
+  .files li{border:1px solid var(--line);border-radius:10px;padding:15px 17px;margin-bottom:10px;
+    display:flex;align-items:center;gap:14px}
+  .files .meta{flex:1;min-width:0}
+  .files .name{font-weight:670;color:var(--navy);font-size:16.5px;line-height:1.35}
+  .files .type{font-size:13.5px;color:var(--ink-2);margin-top:2px}
+  .dl{flex:0 0 auto;text-decoration:none;background:var(--accent);color:#fff;font-weight:670;
+    font-size:14.5px;padding:9px 16px;border-radius:8px}
+  .dl:hover{background:#3d8bd1}
+  .note{background:var(--bg-2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+    padding:16px 18px;margin-top:6px}
+  .start{border:1px solid var(--line);border-radius:12px;padding:20px;background:#fcfdfe}
+  footer{background:var(--navy);color:#b9ccdd;padding:26px 0;font-size:14px;line-height:1.65;margin-top:10px}
+  footer a{color:#cfe0f0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="check">✓</div>
+    <h1>Pagamento confirmado. O Kit é seu.</h1>
+    <p class="lede">
+      Os sete arquivos estão abaixo e também foram enviados para o e-mail da compra.
+      Guarde esta página nos favoritos — ela continua funcionando.
+    </p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Seus arquivos</h2>
+    <ul class="files">
+      <li>
+        <div class="meta">
+          <div class="name">Guia de Adequação à Resolução CFM nº 2.454/2026</div>
+          <div class="type">PDF · 12 páginas</div>
+        </div>
+        <a class="dl" href="LINK_GUIA">Baixar</a>
+      </li>
+      <li>
+        <div class="meta">
+          <div class="name">Checklist de Conformidade — 12 pontos</div>
+          <div class="type">PDF · 5 páginas · para imprimir</div>
+        </div>
+        <a class="dl" href="LINK_CHECKLIST">Baixar</a>
+      </li>
+      <li>
+        <div class="meta">
+          <div class="name">Modelo 1 — Termo de ciência do paciente</div>
+          <div class="type">Word · editável</div>
+        </div>
+        <a class="dl" href="LINK_MODELO_1">Baixar</a>
+      </li>
+      <li>
+        <div class="meta">
+          <div class="name">Modelo 2 — Textos de registro no prontuário</div>
+          <div class="type">Word · editável</div>
+        </div>
+        <a class="dl" href="LINK_MODELO_2">Baixar</a>
+      </li>
+      <li>
+        <div class="meta">
+          <div class="name">Modelo 3 — Política interna de uso de IA</div>
+          <div class="type">Word · editável</div>
+        </div>
+        <a class="dl" href="LINK_MODELO_3">Baixar</a>
+      </li>
+      <li>
+        <div class="meta">
+          <div class="name">Modelo 4 — As dez perguntas para o fornecedor</div>
+          <div class="type">Word · editável</div>
+        </div>
+        <a class="dl" href="LINK_MODELO_4">Baixar</a>
+      </li>
+      <li>
+        <div class="meta">
+          <div class="name">Modelo 5 — Registro de recusa do paciente</div>
+          <div class="type">Word · editável</div>
+        </div>
+        <a class="dl" href="LINK_MODELO_5">Baixar</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Por onde começar</h2>
+    <div class="start">
+      <p>
+        Abra o <strong>Modelo 2</strong> primeiro. Escolha um dos quatro textos de registro,
+        cole no rodapé do seu modelo de documento e use sempre o mesmo.
+      </p>
+      <p>
+        Isso sozinho cumpre o <strong>Art. 4º, inciso V</strong> — o dever mais objetivo da
+        resolução e o mais descumprido. Leva cinco minutos.
+      </p>
+      <p>
+        Depois disso, a ordem completa está na última página do guia.
+      </p>
+    </div>
+    <div class="note">
+      <p style="margin-bottom:0">
+        <strong>Garantia de 30 dias.</strong> Se não for o que estava descrito, responde o e-mail
+        da compra e eu devolvo os R$ 497 integralmente. Você fica com os arquivos.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:#fff">MindMed</strong> — documentação clínica.</p>
+    <p>
+      Qualquer problema com o download, responde o e-mail da compra ou escreve para
+      <a href="mailto:mindmedcontato@gmail.com">mindmedcontato@gmail.com</a>.
+    </p>
+    <p style="opacity:.7;margin-bottom:0">
+      Material produzido a partir do texto oficial da Resolução CFM nº 2.454/2026.
+      Não constitui orientação jurídica. © 2026 MindMed.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
