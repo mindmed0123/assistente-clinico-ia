@@ -22,19 +22,26 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1609890377100542');
 fbq('track','PageView');
 (function(){
-  // dedup simples: se o navegador recarregar a página, não conta duas compras
-  var k = 'mm_kit_purchase';
+  // O Purchase SÓ dispara para quem chegou aqui vindo de um pagamento concluído.
+  // O Stripe substitui {CHECKOUT_SESSION_ID} na URL de redirecionamento.
+  // Sem session_id na URL (visita direta, favorito, link repassado) → nenhum evento.
+  var sid = null;
+  try{ sid = new URLSearchParams(window.location.search).get('session_id'); }catch(e){}
+  if(!sid || sid.indexOf('cs_') !== 0) return;
+
+  // Uma compra só conta uma vez, mesmo se a pessoa recarregar ou voltar depois.
+  var k = 'mm_purchase_' + sid;
   var already = false;
-  try{ already = sessionStorage.getItem(k) === '1'; }catch(e){}
-  if(!already){
-    fbq('track','Purchase',{
-      content_name:'Kit CFM 2454',
-      content_ids:['kit_cfm_2454'],
-      content_type:'product',
-      value:497, currency:'BRL'
-    });
-    try{ sessionStorage.setItem(k,'1'); }catch(e){}
-  }
+  try{ already = localStorage.getItem(k) === '1'; }catch(e){}
+  if(already) return;
+
+  fbq('track','Purchase',{
+    content_name:'Kit CFM 2454',
+    content_ids:['kit_cfm_2454'],
+    content_type:'product',
+    value:497, currency:'BRL'
+  }, {eventID: 'purchase_' + sid});
+  try{ localStorage.setItem(k,'1'); }catch(e){}
 })();
 </script>
 <noscript><img height="1" width="1" style="display:none"
@@ -100,14 +107,14 @@ src="https://www.facebook.com/tr?id=1609890377100542&ev=PageView&noscript=1"/></
           <div class="name">Guia de Adequação à Resolução CFM nº 2.454/2026</div>
           <div class="type">PDF · 12 páginas</div>
         </div>
-        <a class="dl" href="https://drive.google.com/uc?export=download&amp;id=16RFRtk7K9zaWhwO6a3vZGcmx5BP2IRlI" target="_blank" rel="noopener">Baixar</a>
+        <a class="dl" href="https://drive.google.com/uc?export=download&id=16RFRtk7K9zaWhwO6a3vZGcmx5BP2IRlI" target="_blank" rel="noopener">Baixar</a>
       </li>
       <li>
         <div class="meta">
           <div class="name">Checklist de Conformidade — 12 pontos</div>
           <div class="type">PDF · 5 páginas · para imprimir</div>
         </div>
-        <a class="dl" href="https://drive.google.com/uc?export=download&amp;id=1jYn3SN4QYgrjDnIWSFDx36i7h092oJkn" target="_blank" rel="noopener">Baixar</a>
+        <a class="dl" href="https://drive.google.com/uc?export=download&id=1jYn3SN4QYgrjDnIWSFDx36i7h092oJkn" target="_blank" rel="noopener">Baixar</a>
       </li>
       <li>
         <div class="meta">
